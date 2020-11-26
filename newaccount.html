@@ -139,6 +139,7 @@
 						<img src="assets/img/Devices.png" alt="" class="img-responsive">
 					</figure>
 				</div>
+
 				<div class="col-xs-12 col-sm-6">
 					<div class="full-width container-login">
 						<i class="fa fa-user container-login-icon" aria-hidden="true"></i>
@@ -146,35 +147,35 @@
 						<br>
 						<form action=""">
 							<div class=" form-group">
-							<input type="text" class="form-control input-lg" placeholder="Nombres" required="">
+							<input type="text" name="nombres" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
 					</div>
 
 					<div class="form-group">
-						<input type="text" class="form-control input-lg" placeholder="Apellidos" required="">
+						<input type="text" name="apellidos" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Apellidos" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
 					</div>
 
 					<div class="form-group">
-						<select name="Sexo" class="form-control input-lg">
-							<option disable selected>Elige tu género</option>
+						<select name="genero" class="form-control input-lg" required>
+							<option value="" disable selected>Elige tu género</option>
 							<option value="Masculino">Masculino</option>
 							<option value="Masculino">Femenino</option>
 						</select>
 					</div>
 
 					<div class="form-group">
-						<input type="text" class="form-control input-lg" placeholder="Dni" required="">
+						<input type="text" name="dni" minlength="8" maxlength="8" class="form-control input-lg" placeholder="Dni"  required pattern="[0-9]{8}" title="El campo solo debe contener dígitos numéricos.">
 					</div>
 
 					<div class="form-group">
-						<input type="text" class="form-control input-lg" placeholder="Celular" required="">
+						<input type="text" name="celular" minlength="9" maxlength="9" class="form-control input-lg" placeholder="Celular" required pattern="[0-9]+" title="El campo solo debe contener dígitos numéricos.">
 					</div>
 
 					<div class="form-group">
-						<input type="email" class="form-control input-lg" placeholder="Correo" required="">
+						<input type="email" name="correo" maxlength="20" class="form-control input-lg" placeholder="Correo" required="">
 					</div>
 
 					<div class="form-group">
-						<input type="password" class="form-control input-lg" placeholder="Clave" required="">
+						<input type="password" name="clave" maxlength="10" class="form-control input-lg" placeholder="Clave" required="">
 					</div>
 
 					<button class="btn btn-danger btn-lg" type="submit">CREAR CUENTA</button>
@@ -188,74 +189,26 @@
 	<!-- ====== Pie de pagina ======-->
 	<footer class="full-width footer">
 		<div class="container">
-			<p class="text-semi-bold">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequatur quia voluptates
-				voluptas accusamus aliquid in magni. Ullam non, at dolore accusantium ab fugit. Optio quidem blanditiis
-				possimus at vero?
-			</p>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum cum, ipsa ad, natus est deserunt
-				perferendis assumenda ipsum esse voluptates quasi consectetur, laboriosam, sint suscipit quam sunt totam
-				incidunt corporis.
-			</p>
-		</div>
-		<br>
-		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 col-sm-6">
-					<h4 class="text-light text-center">Síguenos en las redes sociales</h4>
-					<ul class="list-unstyled fullwidth text-center footer-social">
-						<li>
-							<a href="#!">
-								<i class="fa fa-facebook" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#!">
-								<i class="fa fa-linkedin" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#!">
-								<i class="fa fa-google-plus" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#!">
-								<i class="fa fa-twitter" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#!">
-								<i class="fa fa-youtube" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#!">
-								<i class="fa fa-instagram" aria-hidden="true"></i>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<h4 class="text-light text-center">Descárgate nuestras apps gratuitas</h4>
-					<ul class="list-unstyled fullwidth text-center footer-app-store">
-						<li>
-							<a href="#!">
-								<i class="fa fa-apple" aria-hidden="true"></i> App Store
-							</a>
-						</li>
-						<li>
-							<a href="#!">
-								<i class="fa fa-android" aria-hidden="true"></i> Play Store
-							</a>
-						</li>
-						<li>
-							<a href="#!">
-								<i class="fa fa-windows" aria-hidden="true"></i> Windows Store
-							</a>
-						</li>
-					</ul>
+				<div class="col-xs-12 col-lg-6">
+
+					<div class="col-xs-12 col-lg-6">
+						<h4 class="text-light text-center"><b>Proyecto Final Fundamentos de Sistemas de Información</b></h4>
+						<ul class="list-unstyled fullwidth text-center footer-app-store">
+							<li>
+								<a href="#!">
+									<i class="fa fa-university" aria-hidden="true"></i>Universidad Nacional de San
+									Agustín
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<i class="fa fa-book" aria-hidden="true"></i> Escuela Profesional de Ingeniería de
+									Sistemas
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -263,11 +216,9 @@
 		<div class="container">
 			<div class="col-xs-12">
 				<ul class="list-unstyled text-center full-width footer-copyright">
-					<li>&copy; 2016 Company</li>
-					<li><a href="#!">Condiciones de uso</a></li>
-					<li><a href="#!">Ayuda</a></li>
-					<li><a href="#!">Políticas de uso</a></li>
-					<li><a href="#!">Apps</a></li>
+					<li>&copy; 2020 Copyright</li>
+					<li><a href="#!">Equipo de Desarrollo</a></li>
+					<li><a href="#!">Repositorio</a></li>
 				</ul>
 			</div>
 		</div>
