@@ -134,12 +134,26 @@
                         <td><?php echo $row['celular']; ?></td>
                         <td><?php echo $row['correo']; ?></td>
                         <td><?php echo $row['clave']; ?></td>
-                        <td><?php echo $row['rol']; ?></td>
-                        <td><?php echo $row['estado']; ?></td>
+                        <td><?php   
+                                    if($row['rol'] == 0){
+                                        echo "Usuario";
+                                    }else{
+                                        echo "Administrador";    
+                                    } 
+                            ?>
+                        </td>
+                        <td><?php   
+                                    if($row['estado'] == 1){
+                                        echo "Activo";
+                                    }else{
+                                        echo "Inactivo";
+                                    } 
+                            ?>
+                        </td>
                         <td><?php echo $row['fecha_creacion']; ?></td>
                         <td>
-                            <button type="button" class="btn btn-warning">Editar</button>
-                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            <button type="button" name="<?php echo $row['codigo']; ?>" class="btn btn-warning">Editar</button>
+                            <button type="button" name="<?php echo $row['codigo']; ?>" class="btn btn-danger">Eliminar</button>
                         </td>
                     </tr>
                     <?php
