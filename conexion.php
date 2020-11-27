@@ -1,18 +1,15 @@
 <?php
 
-function conectar(){
-
     $user = "test";
     $pass = "EkMGdb5c";
     $server = "localhost";
     $db = "proyecto_fsi";
-    $con = mysqli_connect($server, $user, $pass) or die ("Error en conectar".mysqli_error);
+    
+    $conexion = new mysqli($server, $user, $pass, $db);
 
-    mysqli_select_db($con, $db);
-
-    return $con;
-}
-
-
+    if($conexion->connect_errno){
+        die("La conexion ha fallado" . $conexion->connect_errno);
+    }
+    
 ?>
 
