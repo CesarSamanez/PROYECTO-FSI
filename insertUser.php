@@ -15,11 +15,11 @@ $query = mysqli_query($conexion, $sql);
 
 if($query){
     echo "<script> alert('Registro exitoso');
-    location.href = '../index.html';      
+    location.href = 'index.html';      
     </script>";
 }else{
     echo "<script> alert('No se pudo realizar el registro'); 
-    location.href = '../index.html';     
+    location.href = 'index.html';     
     </script>";
 }
 
