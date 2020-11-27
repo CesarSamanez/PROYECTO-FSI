@@ -152,8 +152,10 @@
                         </td>
                         <td><?php echo $row['fecha_creacion']; ?></td>
                         <td>
+                        <!--   
                             <button type="button" name="<?php echo $row['codigo']; ?>" href="editUser.php?codigo=<?php echo $row['codigo'];?>" class="btn btn-warning">Editar</button>
                             <button type="button" name="<?php echo $row['codigo']; ?>" href="google.com" class="btn btn-danger">Eliminar</button>
+                        -->
                         </td>
                     </tr>
                     <?php
