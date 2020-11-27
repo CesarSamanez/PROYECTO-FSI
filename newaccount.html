@@ -145,45 +145,55 @@
 						<i class="fa fa-user container-login-icon" aria-hidden="true"></i>
 						<h4 class="text-center text-light">CREA UNA CUENTA</h4>
 						<br>
-						<form action=""">
+						<form action="insertUser.php" method="POST">
 							<div class=" form-group">
-							<input type="text" name="nombres" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
-					</div>
+								<input type="text" name="nombres" minlength="1" maxlength="30"
+									class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+"
+									title="El campo solo debe contener letras.">
+							</div>
 
-					<div class="form-group">
-						<input type="text" name="apellidos" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Apellidos" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
-					</div>
+							<div class="form-group">
+								<input type="text" name="apellidos" minlength="1" maxlength="30"
+									class="form-control input-lg" placeholder="Apellidos" required
+									pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
+							</div>
 
-					<div class="form-group">
-						<select name="genero" class="form-control input-lg" required>
-							<option value="" disable selected>Elige tu género</option>
-							<option value="Masculino">Masculino</option>
-							<option value="Masculino">Femenino</option>
-						</select>
-					</div>
+							<div class="form-group">
+								<select name="genero" class="form-control input-lg" required>
+									<option value="" disable selected>Elige tu género</option>
+									<option value="Masculino">Masculino</option>
+									<option value="Masculino">Femenino</option>
+								</select>
+							</div>
 
-					<div class="form-group">
-						<input type="text" name="dni" minlength="8" maxlength="8" class="form-control input-lg" placeholder="Dni"  required pattern="[0-9]{8}" title="El campo solo debe contener dígitos numéricos.">
-					</div>
+							<div class="form-group">
+								<input type="text" name="dni" minlength="8" maxlength="8" class="form-control input-lg"
+									placeholder="Dni" required pattern="[0-9]{8}"
+									title="El campo solo debe contener dígitos numéricos.">
+							</div>
 
-					<div class="form-group">
-						<input type="text" name="celular" minlength="9" maxlength="9" class="form-control input-lg" placeholder="Celular" required pattern="[0-9]+" title="El campo solo debe contener dígitos numéricos.">
-					</div>
+							<div class="form-group">
+								<input type="text" name="celular" minlength="9" maxlength="9"
+									class="form-control input-lg" placeholder="Celular" required pattern="[0-9]+"
+									title="El campo solo debe contener dígitos numéricos.">
+							</div>
 
-					<div class="form-group">
-						<input type="email" name="correo" maxlength="20" class="form-control input-lg" placeholder="Correo" required="">
-					</div>
+							<div class="form-group">
+								<input type="email" name="correo" maxlength="20" class="form-control input-lg"
+									placeholder="Correo" required="">
+							</div>
 
-					<div class="form-group">
-						<input type="password" name="clave" maxlength="10" class="form-control input-lg" placeholder="Clave" required="">
-					</div>
+							<div class="form-group">
+								<input type="password" name="clave" maxlength="10" class="form-control input-lg"
+									placeholder="Clave" required="">
+							</div>
 
-					<button class="btn btn-danger btn-lg" type="submit">CREAR CUENTA</button>
-					<a href="login.html" class="text-center">Ya tengo una cuenta</a>
-					</form>
+							<button class="btn btn-danger btn-lg" type="submit">CREAR CUENTA</button>
+							<a href="login.html" class="text-center">Ya tengo una cuenta</a>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 	</section>
 	<!-- ====== Pie de pagina ======-->
