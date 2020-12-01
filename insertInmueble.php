@@ -78,8 +78,7 @@ if($query){
     echo "<script> alert('Registro exitoso Inmueble');    
     </script>";
 }else{
-    echo "<script> alert('No se pudo realizar el registro Inmueble'); 
-    location.href = 'addcommercial.php';     
+    echo "<script> alert('No se pudo realizar el registro Inmueble');     
     </script>";
 }
 
