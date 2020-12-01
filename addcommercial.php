@@ -256,7 +256,7 @@ include("conexion.php");
 								<select name="moneda" class="form-control input-md" required>
 									<option value="" disable selected>Selecciona la moneda</option>
 									<?php
-									$sql = "SELECT DISTINCT nombre FROM monedas";
+									$sql = "SELECT DISTINCT nombre FROM moneda";
 									$result = $conexion->query($sql);
 
 									if ($result->num_rows > 0) {
