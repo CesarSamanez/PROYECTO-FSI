@@ -132,7 +132,7 @@ include("conexion.php");
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1" style="border: 1px solid #E1E1E1;">
-					<form action="insertInmueble" method="POST" class="form-horizontal">
+					<form action="insertInmueble.php" method="POST" class="form-horizontal">
 						<h3 class="text-info">Datos generales</h3>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Tipo de inmueble</label>
