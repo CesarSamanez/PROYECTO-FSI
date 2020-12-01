@@ -52,9 +52,14 @@ $aforo = $_POST['aforo'];
     VALIDAR SUBIDA DE FOTOS
 */
 
-$foto = $_POST['foto'];
 
-$sql = "INSERT INTO inmueble_detalles (ancho, largo, area, precio, moneda, otros_detalles, aforo, foto) VALUES('$ancho','$largo','$area','$precio','$moneda','$otros_detalles','$aforo','$foto')";
+$revisar = getimagesize($_FILES["foto"]["tmp_name"]);
+if($revisar !== false){
+    $image = $_FILES['foto']['tmp_name'];
+    $imgContenido = addslashes(file_get_contents($image));
+
+
+$sql = "INSERT INTO inmueble_detalles (ancho, largo, area, precio, moneda, otros_detalles, aforo, foto) VALUES('$ancho','$largo','$area','$precio','$moneda','$otros_detalles','$aforo','$imgContenido')";
 $query = mysqli_query($conexion, $sql);
 
 if($query){
@@ -66,6 +71,7 @@ if($query){
     </script>";
 }
 
+}
 $codigoInmuebleDetalles = $conexion->insert_id;
 
 $usuario = 2;
@@ -123,8 +129,3 @@ if($query){
     </script>";
 }
 */
-
-
-
-
-?>
