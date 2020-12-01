@@ -62,8 +62,7 @@ if($query){
     </script>";
 }else{
     echo "Error: " . $sql . "->" . $conexion->error;
-    echo "<script> alert('No se pudo realizar el registro inmueble_Detalles'); 
-    location.href = 'addcommercial.php';     
+    echo "<script> alert('No se pudo realizar el registro inmueble_Detalles');  
     </script>";
 }
 
