@@ -54,13 +54,14 @@ $aforo = $_POST['aforo'];
 
 $foto = $_POST['foto'];
 
-$sql = "INSERT INTO inmueble_detalles (ancho, largo, area, precio, moneda) VALUES('$ancho','$largo','$area','$precio','$moneda')";
+$sql = "INSERT INTO inmueble_detalles (ancho, largo, area, precio, moneda, otros_detalles, aforo, foto) VALUES('$ancho','$largo','$area','$precio','$moneda','$otros_detalles','$aforo','$foto')";
 $query = mysqli_query($conexion, $sql);
 
 if($query){
     echo "<script> alert('Registro exitoso inmueble_detalles');    
     </script>";
 }else{
+    echo "Error: " . $sql . "->" . $conexion->error;
     echo "<script> alert('No se pudo realizar el registro inmueble_Detalles'); 
     location.href = 'addcommercial.php';     
     </script>";
