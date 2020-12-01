@@ -162,7 +162,7 @@ include("conexion.php");
 								<select name="departamento" class="form-control input-md" required>
 									<option value="" disable selected>Selecciona el departamento</option>
 									<?php
-									$sql = "SELECT DISTINCT departamento FROM lugares";
+									$sql = "SELECT DISTINCT departamento FROM lugares ORDER BY departamento ASC";
 									$result = $conexion->query($sql);
 
 									if ($result->num_rows > 0) {
@@ -183,7 +183,7 @@ include("conexion.php");
 								<select name="provincia" class="form-control input-md" required>
 									<option value="" disable selected>Selecciona la provincia</option>
 									<?php
-									$sql = "SELECT DISTINCT provincia FROM lugares";
+									$sql = "SELECT DISTINCT provincia FROM lugares ORDER BY provincia ASC";
 									$result = $conexion->query($sql);
 
 									if ($result->num_rows > 0) {
@@ -204,7 +204,7 @@ include("conexion.php");
 								<select name="distrito" class="form-control input-md" required>
 									<option value="" disable selected>Selecciona el distrito</option>
 									<?php
-									$sql = "SELECT DISTINCT distrito FROM lugares";
+									$sql = "SELECT DISTINCT distrito FROM lugares ORDER BY distrito ASC";
 									$result = $conexion->query($sql);
 
 									if ($result->num_rows > 0) {
