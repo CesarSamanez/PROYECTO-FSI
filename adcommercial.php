@@ -132,7 +132,7 @@ include("conexion.php");
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1" style="border: 1px solid #E1E1E1;">
-					<form action="" class="form-horizontal">
+					<form action="insertInmueble" method="POST" class="form-horizontal">
 						<h3 class="text-info">Datos generales</h3>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Tipo de inmueble</label>
@@ -250,13 +250,31 @@ include("conexion.php");
 						</div>
 
 						<div class="form-group">
+
 							<label class="col-sm-3 control-label">Moneda</label>
 							<div class="col-sm-7">
 								<select name="moneda" class="form-control input-md" required>
 									<option value="" disable selected>Selecciona la moneda</option>
-									<option value="#">Soles</option>
-									<option value="#">Dólares</option>
+									<?php
+									$sql = "SELECT DISTINCT nombre FROM monedas";
+									$result = $conexion->query($sql);
+
+									if ($result->num_rows > 0) {
+										while ($row = $result->fetch_assoc()) {
+									?>
+											<option value="<?php echo $row['codigo']; ?>"><?php echo $row['nombre']; ?></option>
+									<?php
+										}
+									}
+									?>
 								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Otros detalles</label>
+							<div class="col-sm-7">
+								<textarea class="form-control" name="otros_detalles" maxlength="100" rows="3" placeholder="Otros detalles" required></textarea>
 							</div>
 						</div>
 
@@ -283,33 +301,33 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Nombres</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" placeholder="Nombres" disabled>
+								<input type="text" name="nombres" class="form-control" placeholder="Nombres" disabled>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Apellidos</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" placeholder="Apellidos" disabled>
+								<input type="text" name="apellidos" class="form-control" placeholder="Apellidos" disabled>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Celular</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" placeholder="Celular" disabled>
+								<input type="text" name="celular" class="form-control" placeholder="Celular" disabled>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">E-Mail</label>
 							<div class="col-sm-7">
-								<input type="email" class="form-control" placeholder="E-Mail" disabled>
+								<input type="email" name="" class="form-control" placeholder="E-Mail" disabled>
 							</div>
 						</div>
 						<br>
 						<p class="text-center">
-							<button class="btn btn-info">Continuar</button>
+							<button type="submit" class="btn btn-info">Continuar</button>
 						</p>
 						<br>
 
