@@ -54,7 +54,7 @@ $aforo = $_POST['aforo'];
 
 $foto = $_POST['foto'];
 
-$sql = "INSERT INTO inmueble_detalles (ancho, largo, area, precio, moneda, otros_detalles, aforo, foto) VALUES('$ancho','$largo','$area','$precio','$moneda','$otros_detalles','$aforo','$foto')";
+$sql = "INSERT INTO inmueble_detalles (ancho, largo, area, precio, moneda) VALUES('$ancho','$largo','$area','$precio','$moneda')";
 $query = mysqli_query($conexion, $sql);
 
 if($query){
