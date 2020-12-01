@@ -12,7 +12,7 @@ if($query){
     </script>";
 }else{
     echo "<script> alert('No se pudo realizar el registro TipoInmueble'); 
-    location.href = 'addcommercial.php';     
+  
     </script>";
 }
 
@@ -33,7 +33,7 @@ if($query){
     </script>";
 }else{
     echo "<script> alert('No se pudo realizar el registro Ubicacion'); 
-    location.href = 'addcommercial.php';     
+   
     </script>";
 }
 
