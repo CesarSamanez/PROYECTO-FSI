@@ -132,7 +132,7 @@ include("conexion.php");
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1" style="border: 1px solid #E1E1E1;">
-					<form action="insertInmueble.php" method="POST" class="form-horizontal">
+					<form action="insertInmueble.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
 						<h3 class="text-info">Datos generales</h3>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Tipo de inmueble</label>
@@ -289,7 +289,7 @@ include("conexion.php");
 						<p>¡Los anuncios con fotos reciben 7 veces más contactos!</p>
 						<div class="form-group">
 							<div class="custom-input-file">
-								<input type="file" size="1" class="input-file" />
+								<input type="file" name="foto" size="1" class="input-file" />
 								<i class="fa fa-picture-o" aria-hidden="true"></i>
 							</div>
 							<br>
