@@ -162,7 +162,7 @@ include("conexion.php");
 								<select name="departamento" class="form-control input-md" required>
 									<option value="" disable selected>Selecciona el departamento</option>
 									<?php
-									$sql = "SELECT departamento FROM lugares";
+									$sql = "SELECT DISTINCT departamento FROM lugares";
 									$result = $conexion->query($sql);
 
 									if ($result->num_rows > 0) {
@@ -182,8 +182,18 @@ include("conexion.php");
 							<div class="col-sm-7">
 								<select name="provincia" class="form-control input-md" required>
 									<option value="" disable selected>Selecciona la provincia</option>
-									<option value="#">Arequipa</option>
-									<option value="#">Camaná</option>
+									<?php
+									$sql = "SELECT DISTINCT provincia FROM lugares";
+									$result = $conexion->query($sql);
+
+									if ($result->num_rows > 0) {
+										while ($row = $result->fetch_assoc()) {
+									?>
+											<option value="<?php echo $row['provincia']; ?>"><?php echo $row['provincia']; ?></option>
+									<?php
+										}
+									}
+									?>
 								</select>
 							</div>
 						</div>
@@ -193,8 +203,18 @@ include("conexion.php");
 							<div class="col-sm-7">
 								<select name="distrito" class="form-control input-md" required>
 									<option value="" disable selected>Selecciona el distrito</option>
-									<option value="#">Cerro Colorado</option>
-									<option value="#">Paucarpata</option>
+									<?php
+									$sql = "SELECT DISTINCT distrito FROM lugares";
+									$result = $conexion->query($sql);
+
+									if ($result->num_rows > 0) {
+										while ($row = $result->fetch_assoc()) {
+									?>
+											<option value="<?php echo $row['distrito']; ?>"><?php echo $row['distrito']; ?></option>
+									<?php
+										}
+									}
+									?>
 								</select>
 							</div>
 						</div>
