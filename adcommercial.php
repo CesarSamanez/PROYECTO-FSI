@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<?php
+include("conexion.php");
+?>
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Pon tu anuncio</title>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">
@@ -58,8 +61,7 @@
 					</a>
 				</li>
 				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">INICIAR SESIÓN</a></li>
-				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin"
-						aria-hidden="true"></i></li>
+				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i></li>
 			</ul>
 		</nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
@@ -68,8 +70,7 @@
 	<!-- ====== PopUpLogin ======-->
 	<section class=" full-width PopUpLogin">
 		<ul class="nav nav-tabs nav-justified" role="tablist">
-			<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab"
-					data-toggle="tab">PARTICULAR</a></li>
+			<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab" data-toggle="tab">PARTICULAR</a></li>
 			<li role="presentation"><a href="#LoginTab2" aria-controls="LoginTab2" role="tab" data-toggle="tab">TIENDA
 					VIRTUAL</a></li>
 		</ul>
@@ -120,8 +121,7 @@
 				<input type="text" class="form-control input-lg" placeholder="Estoy buscado..." required="">
 			</div>
 			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Provincia, ciudad, distrito..."
-					required="">
+				<input type="text" class="form-control input-lg" placeholder="Provincia, ciudad, distrito..." required="">
 			</div>
 			<button class="btn btn-danger btn-lg" type="submit">BUSCAR</button>
 		</form>
@@ -157,12 +157,22 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Distrito</label>
+							<label class="col-sm-3 control-label">Departamento</label>
 							<div class="col-sm-7">
-								<select name="distrito" class="form-control input-md" required>
-									<option value="" disable selected>Selecciona el distrito</option>
-									<option value="#">Cerro Colorado</option>
-									<option value="#">Paucarpata</option>
+								<select name="departamento" class="form-control input-md" required>
+									<option value="" disable selected>Selecciona el departamento</option>
+									<?php
+									$sql = "SELECT departamento FROM lugares";
+									$result = $conexion->query($sql);
+
+									if ($result->num_rows > 0) {
+										while ($row = $result->fetch_assoc()) {
+									?>
+											<option value="<?php echo $row['departamento']; ?>"><?php echo $row['departamento']; ?></option>
+									<?php
+										}
+									}
+									?>
 								</select>
 							</div>
 						</div>
@@ -179,17 +189,16 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Departamento</label>
+							<label class="col-sm-3 control-label">Distrito</label>
 							<div class="col-sm-7">
-								<select name="departamento" class="form-control input-md" required>
-									<option value="" disable selected>Selecciona el departamento</option>
-									<option value="#">Arequipa</option>
-									<option value="#">Trujillo</option>
+								<select name="distrito" class="form-control input-md" required>
+									<option value="" disable selected>Selecciona el distrito</option>
+									<option value="#">Cerro Colorado</option>
+									<option value="#">Paucarpata</option>
 								</select>
 							</div>
 						</div>
 
-						
 						<br>
 						<h3 class="text-info">Detalles de tu anuncio</h3>
 						<div class="form-group">
@@ -321,7 +330,9 @@
 		</div>
 	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script>
+		window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')
+	</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="js/main.js"></script>
