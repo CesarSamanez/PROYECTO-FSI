@@ -160,14 +160,13 @@ include("conexion.php");
 					ON inmueble.inmueble_detalles = inmueble_detalles.codigo
 					INNER JOIN usuario
 					ON inmueble.contacto = usuario.codigo
-					WHERE inmueble.contacto = " . $_GET['codigo'];
+					WHERE inmueble.codigo = " . $_GET['codigo'];
 
                     $result = $conexion->query($sql);
 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                     ?>
-
                             <p class="lead text-justify">
                                 <?php
                                 echo $row['DESCRIPCION_TIPO_INMUEBLE'];
@@ -218,16 +217,16 @@ include("conexion.php");
                     </div>
                     <div class="clearfix"></div>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><b>Dirección:</b> <?php echo $row['DIRECCION_UBICACION']; ?>
+                        <b>Dirección:</b> <?php echo $row['DIRECCION_UBICACION']; ?>
                     </p>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><b>Distrito:</b> <?php echo $row['DISTRITO_UBICACION']; ?>
+                        <b>Distrito:</b> <?php echo $row['DISTRITO_UBICACION']; ?>
                     </p>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><b>Provincia:</b> <?php echo $row['PROVINCIA_UBICACION']; ?>
+                        <b>Provincia:</b> <?php echo $row['PROVINCIA_UBICACION']; ?>
                     </p>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><b>departamento:</b> <?php echo $row['DEPARTAMENTO_UBICACION']; ?>
+                        <b>Departamento:</b> <?php echo $row['DEPARTAMENTO_UBICACION']; ?>
                     </p>
                     <div class="page-header">
                         <h3 class="text-light text-center">Comparte este anuncio</small></h1>
