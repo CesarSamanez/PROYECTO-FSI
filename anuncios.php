@@ -103,8 +103,6 @@ include("conexion.php");
 						<div class="full-width post-user-info" style="margin: 0 !important;">
 							<!--<i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>-->
 							<img src="assets/img/user.png" class="NavBar-Nav-icon" alt="User">
-							<p class="full-width"><small><?php echo strtoupper($_SESSION['nombres']); ?> <?php echo strtoupper($_SESSION['apellidos']); ?></small></p>
-							<br>
 							<div class="full-width div-table">
 							</div>
 						</div>
@@ -113,29 +111,20 @@ include("conexion.php");
 								<p><small>Última conexión</small></p>
 								<p><small><?php echo date_create()->format('d-m-Y H:i:s'); ?> </small></p>
 							</div>
-
-							<a href="perfil.html" class="list-group-item">
-								<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
-							</a>
-
-							<a href="yourcommercial.html" class="list-group-item active">
-								<i class="fa fa-object-group fa-fw" aria-hidden="true"></i> TUS ANUNCIOS
-							</a>
-
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-8 col-md-9">
 					<div class="full-width bar-info-user">
 						<i class="fa fa-object-group fa-fw" aria-hidden="true"></i>
-						<div>TUS ANUNCIOS</div>
+						<div>ANUNCIOS</div>
 					</div>
 					<!-- Contenido-->
 
 					<div class="full-width container-post">
-					<?php
+						<?php
 
-					$sql = "select inmueble.codigo CODIGO_INMUEBLE, tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto FOTO_INMUEBLE_DETALLES, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
+						$sql = "select inmueble.codigo CODIGO_INMUEBLE, tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto FOTO_INMUEBLE_DETALLES, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
 					INNER JOIN tipo_inmueble
 					ON inmueble.tipo_inmueble = tipo_inmueble.codigo
 					INNER JOin ubicacion
@@ -145,17 +134,17 @@ include("conexion.php");
 					INNER JOIN usuario
 					ON inmueble.contacto = usuario.codigo;";
 
-					$result = $conexion->query($sql);
+						$result = $conexion->query($sql);
 
-					if ($result->num_rows > 0) {
-						while ($row = $result->fetch_assoc()) {
-					?>
-							
+						if ($result->num_rows > 0) {
+							while ($row = $result->fetch_assoc()) {
+						?>
+
 								<div class="full-width post">
 									<figure class="full-width post-img">
 										<!-- Tamaño de la imagen 248x186 pixeles-->
 										<?php
-											echo '<img src="data:image/png;base64,' . base64_encode( $row['FOTO_INMUEBLE_DETALLES'] ) . '" alt="" class="img-responsive" />';
+										echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" class="img-responsive" />';
 										?>
 									</figure>
 									<div class="full-width post-info">
@@ -167,11 +156,11 @@ include("conexion.php");
 										<i class="fa fa-heart-o post-info-like"></i>
 									</div>
 								</div>
-							
-					<?php
+
+						<?php
+							}
 						}
-					}
-					?>
+						?>
 					</div>
 					<div class="clearfix"></div>
 
