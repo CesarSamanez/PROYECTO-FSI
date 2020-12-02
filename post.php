@@ -155,7 +155,7 @@ include("conexion.php");
                                 </center>
                             </div>
 
-
+                            <br>
                             <p class="lead text-justify"><b>Descripción:</b>
                                 <?php
                                 echo $row['DESCRIPCION_TIPO_INMUEBLE'];
@@ -195,9 +195,6 @@ include("conexion.php");
                         <div class="full-width div-table-row">
                             <div class="div-table-cell div-table-cell-xs">
                                 <a href="commercial.html" class="btn btn-default btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i> Volver al listado</a>
-                            </div>
-                            <div class="div-table-cell div-table-cell-xs">
-                                <a href="#!" class="btn btn-default btn-block">Siguiente anuncio <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
