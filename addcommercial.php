@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-	
+
 <?php
 include("conexion.php");
 ?>
@@ -307,28 +307,28 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Nombres</label>
 							<div class="col-sm-7">
-								<input type="text" name="nombres" class="form-control" placeholder="Nombres" disabled>
+								<input type="text" name="nombres" value="<?php echo $_SESSION['nombres']; ?>" class="form-control" placeholder="Nombres" disabled>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Apellidos</label>
 							<div class="col-sm-7">
-								<input type="text" name="apellidos" class="form-control" placeholder="Apellidos" disabled>
+								<input type="text" name="apellidos" value="<?php echo $_SESSION['apellidos']; ?>" class="form-control" placeholder="Apellidos" disabled>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Celular</label>
 							<div class="col-sm-7">
-								<input type="text" name="celular" class="form-control" placeholder="Celular" disabled>
+								<input type="text" name="celular" value="<?php echo $_SESSION['celular']; ?>" class="form-control" placeholder="Celular" disabled>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">E-Mail</label>
 							<div class="col-sm-7">
-								<input type="email" name="" class="form-control" placeholder="E-Mail" disabled>
+								<input type="email" name="email" value="<?php echo $_SESSION['correo']; ?>" class="form-control" placeholder="E-Mail" disabled>
 							</div>
 						</div>
 						<br>
