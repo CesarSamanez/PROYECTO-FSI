@@ -203,7 +203,7 @@ include("conexion.php");
         function eliminar(){
             var answer = window.confirm("¿Eliminar registro?");
             if(answer){
-                location = delete_user.php?codigo=<?php echo $row['codigo']; ?>
+                location = delete_user.php?codigo=<?php echo $row['codigo']; ?>;
             }
         }
     </script>
