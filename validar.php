@@ -9,12 +9,12 @@ $password = $_POST['password'];
 $sql = "SELECT *FROM usuario WHERE correo='$email' AND clave='$password'";
 $query = mysqli_query($conexion, $sql);
 
-if($query->num_rows > 0){
-    header("Location: www.google.com");
-}else{
-    
+$filas = mysqli_num_rows($query);
+
+if($filas > 0){
+    echo "window.location='index.html';";
+}else{ 
     echo "Sesion invalida";
 }
-
 
 ?>
