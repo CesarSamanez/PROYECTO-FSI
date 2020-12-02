@@ -145,88 +145,75 @@ include("conexion.php");
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-8 col-md-9">
-					<div class="full-width bar-info-user">
-						<i class="fa fa-user fa-fw" aria-hidden="true"></i>
-						<div>TU PERFIL</div>
-					</div>
-					<!-- Contenido-->
-					<div class="full-width" style="padding: 15px; border: 1px solid #E1E1E1;">
-						<form action="">
-							<p class="text-muted text-center">Seleciona una image</p>
-							<div class="form-group">
-								<div class="custom-input-file">
-									<input type="file" size="1" class="input-file" />
-									<i class="fa fa-picture-o" aria-hidden="true"></i>
-								</div>
-								<br>
-								<p class="text-muted text-center archivo">Archivo...</p>
-							</div>
-							<br><br><br>
+				<?php
+				$codigo_usuario = $_SESSION['codigo'];
 
-							<div class="form-group">
-								<label>Nombres</label>
-								<input type="text" placeholder="Nombre" class="form-control" disabled>
-							</div>
+				$sql = "SELECT *FROM usuario where codigo=$codigo_usuario";
+				$result = $conexion->query($sql);
 
-							<div class="form-group">
-								<label>Apellidos</label>
-								<input type="text" placeholder="Nombre" class="form-control" disabled>
+				if ($result->num_rows > 0) {
+					while ($row = $result->fetch_assoc()) {
+				?>
+						<div class="col-xs-12 col-sm-8 col-md-9">
+							<div class="full-width bar-info-user">
+								<i class="fa fa-user fa-fw" aria-hidden="true"></i>
+								<div>TU PERFIL</div>
 							</div>
+							<!-- Contenido-->
+							<div class="full-width" style="padding: 15px; border: 1px solid #E1E1E1;">
+								<form action="edit_user.php" method="POST">
+									<div class=" form-group">
+										<input type="text" name="nombres" value="<?php echo $row['nombres']; ?>" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
+									</div>
 
-							<div class="form-group">
-								<label>Género</label>
-								<input type="text" placeholder="Nombre" class="form-control" disabled>
-							</div>
+									<div class="form-group">
+										<input type="text" name="apellidos" value="<?php echo $row['apellidos']; ?>" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Apellidos" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
+									</div>
 
-							<div class="form-group">
-								<label>Dni</label>
-								<input type="text" placeholder="Nombre" class="form-control" disabled>
-							</div>
+									<div class="form-group">
+										<select name="genero" class="form-control input-lg" required>
+											<option value="<?php echo $row['genero']; ?>">
+												<?php
+												if ($row['genero'] == 'Masculino') { ?>
+													Masculino</option>
+											<option value="Femenino">Femenino</option>
+										<?php
+												} else {
+										?>
+											Femenino</option>
+											<option value="Masculino">Masculino</option>
+										<?php
+												}
+										?>
+										</select>
+									</div>
 
-							<div class="form-group">
-								<label>Celular</label>
-								<input type="text" placeholder="Nombre" class="form-control" disabled>
-							</div>
+									<div class="form-group">
+										<input type="text" name="dni" value="<?php echo $row['dni']; ?>" minlength="8" maxlength="8" class="form-control input-lg" placeholder="Dni" required pattern="[0-9]{8}" title="El campo solo debe contener dígitos numéricos.">
+									</div>
 
-							<div class="form-group">
-								<label>Correo</label>
-								<input type="text" placeholder="Nombre" class="form-control" disabled>
-							</div>
+									<div class="form-group">
+										<input type="text" name="celular" value="<?php echo $row['celular']; ?>" minlength="9" maxlength="9" class="form-control input-lg" placeholder="Celular" required pattern="[0-9]+" title="El campo solo debe contener dígitos numéricos.">
+									</div>
 
-							<div class="form-group">
-								<label>Contraseña</label>
-								<a href="#!" class="btn btn-default btn-xs pull-right btn-dropdown-conatiner" data-drop-cont=".perfil-password">
-									Mostrar/Ocultar <i class="fa fa-sort" aria-hidden="true"></i>
-								</a>
-								<div class="full-width perfil-password">
-									<input type="password" placeholder="Contraseña" class="form-control">
-								</div>
-							</div>
+									<div class="form-group">
+										<input type="email" name="correo" value="<?php echo $row['correo']; ?>" maxlength="20" class="form-control input-lg" placeholder="Correo" required="">
+									</div>
 
-							<div class="form-group">
-								<label>Nombre</label>
-								<input type="text" placeholder="Nombre" class="form-control">
-							</div>
-							<div class="form-group">
-								<label>Teléfono <small>Éste será el teléfono de contacto en tus anuncios</small></label>
-								<input type="text" placeholder="¿Cuál es tu teléfono?" class="form-control">
-							</div>
-							<div class="form-group">
-								<label>Localización <small>¿Cuál es tu ubicación?</small></label>
-								<input type="email" placeholder="Email" class="form-control">
-							</div>
-							<div class="form-group">
-								<label>Email</label>
-								<input type="email" placeholder="Email" class="form-control">
-							</div>
+									<div class="form-group">
+										<input type="password" name="clave" value="<?php echo $row['clave']; ?>" maxlength="10" class="form-control input-lg" placeholder="Clave" required="">
+									</div>
 
-							<p class="text-center">
-								<button class="btn btn-danger">GUARDAR</button>
-							</p>
-						</form>
-					</div>
-				</div>
+							<?php
+						}
+					}
+							?>
+
+							<button class="btn btn-primary btn-lg" type="submit">GUARDAR CAMBIOS</button>
+							<br><button class="btn btn-danger btn-lg" type="submit">CANCELAR</button>
+								</form>
+							</div>
+						</div>
 			</div>
 		</div>
 	</section>
