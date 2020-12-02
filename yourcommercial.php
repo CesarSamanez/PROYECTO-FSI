@@ -140,7 +140,7 @@ include("conexion.php");
 					<div class="full-width container-post">
 					<?php
 
-					$sql = "select tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, inmueble.fecha_creacion FECHA_CREACION_INMUEBLE from inmueble
+					$sql = "select tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
 					INNER JOIN tipo_inmueble
 					ON inmueble.tipo_inmueble = tipo_inmueble.codigo
 					INNER JOin ubicacion
