@@ -175,19 +175,29 @@ include("conexion.php");
                             <div class="full-width div-table">
                                 <div class="full-width div-table-row">
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        <b>Ancho: </b> <?php echo $row['ANCHO_INMUEBLE_DETALLES']; ?>
+                                        <b>Ancho: </b> <?php echo $row['ANCHO_INMUEBLE_DETALLES']; ?> metros.
                                     </div>
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        <b>Largo: </b> <?php echo $row['LARGO_INMUEBLE_DETALLES']; ?>
+                                        <b>Largo: </b> <?php echo $row['LARGO_INMUEBLE_DETALLES']; ?> metros.
                                     </div>
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        <b>Área: </b> <?php echo $row['AREA_INMUEBLE_DETALLES']; ?>
+                                        <b>Área: </b> <?php echo $row['AREA_INMUEBLE_DETALLES']; ?> metros.
+                                    </div>
+                                </div>
+                                <div class="full-width div-table-row">
+                                    <div class="div-table-cell div-table-cell-xs div-table-cell-c">
+                                        <b>Precio: </b>$. <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?> metros.
+                                    </div>
+                                    <div class="div-table-cell div-table-cell-xs div-table-cell-c">
+                                        <b>Aforo: </b> <?php echo $row['AFORO_INMUEBLE_DETALLES']; ?> metros.
+                                    </div>
+                                    <div class="div-table-cell div-table-cell-xs div-table-cell-c">
+                                        <b>Otros Detalles: </b> <?php echo $row['OTROS_DETALLES_INMUEBLE_DETALLES']; ?> metros.
                                     </div>
                                 </div>
                             </div>
                             <p class="lead">
-                                <strong>Publicado: hoy</strong>
-                                &nbsp; <strong>Visto 250 veces</strong>
+                                <strong><b>Publicado: </b><?php echo $row['FECHA_CREACION_INMUEBLE']; ?></strong>
                             </p>
                 </div>
                 <div class="col-xs-12 col-sm-4">
@@ -203,7 +213,7 @@ include("conexion.php");
                     </div>
                     <div class="full-width" style="padding:10px; background-color: #F5F5F5; margin: 7px 0;">
                         <p class="lead text-center"><strong><?php echo $row['NOMBRE_TIPO_INMUEBLE']; ?></strong></p>
-                        <p class="lead text-center" style="color: #F09000;"><strong><?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?></strong></p>
+                        <p class="lead text-center" style="color: #F09000;"><strong>$. <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?></strong></p>
                     </div>
                     <div class="full-width post-user-info">
                         <i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>
