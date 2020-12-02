@@ -163,10 +163,10 @@ include("conexion.php");
 										<img src="<?php echo $row['foto']; ?>" alt="" class="img-responsive">
 									</figure>
 									<div class="full-width post-info">
-										<a href="post.html" class="full-width post-info-title"><?php echo $row['tipo_inmueble']['nombre']; ?></a>
-										<p class="full-width post-info-price">$7,000</p>
+										<a href="post.html" class="full-width post-info-title"><?php echo $row['nombre']; ?></a>
+										<p class="full-width post-info-price">$ <?php echo $row['precio']; ?></p>
 										<span class="post-info-zone">Zona</span>
-										<span class="post-info-date">hoy 07:00</span>
+										<span class="post-info-date"><?php $row['inmueble']['fecha_creacion'] ?></span>
 										<i class="fa fa-heart-o post-info-like"></i>
 									</div>
 								</div>
