@@ -198,7 +198,7 @@ include("conexion.php");
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
+    <script type="text/javascript">
         function eliminar() {
             var answer = window.confirm("¿Eliminar registro?");
             if (answer) {
