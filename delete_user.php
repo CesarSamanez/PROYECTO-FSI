@@ -4,7 +4,7 @@ include("conexion.php");
 
 $codigo = $_GET['codigo'];
 ?>
-<script type="text/javascript">
+<script>
     var answer = window.confirm("¿Eliminar registro?");
     if (answer) {
         <?php
@@ -17,7 +17,7 @@ $codigo = $_GET['codigo'];
             echo "</script>";
         } else {
             echo "<script>";
-            echo "alert('Error - No se pudo guardar el registro.');";
+            echo "alert('Error - No se pudo eliminar el registro.');";
             echo "window.location = 'administration.php';";
             echo "</script>";
         }
