@@ -186,8 +186,8 @@ include("conexion.php");
                                 </div>
                             </div>
                             <br>
-                            <p>
-                                <strong><b>Publicado: </b><?php echo $row['FECHA_CREACION_INMUEBLE']; ?></strong>
+                            <p class="lead text-justify">
+                                <b>Publicado: </b><?php echo $row['FECHA_CREACION_INMUEBLE']; ?>
                             </p>
                 </div>
                 <div class="col-xs-12 col-sm-4">
