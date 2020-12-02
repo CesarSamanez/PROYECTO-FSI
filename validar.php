@@ -15,10 +15,11 @@ if($filas > 0){
         </script>
     ";
 }else{ 
+    echo "$correo";
+    echo "$clave";
+
     echo "<script>
         alert('Correo o clave incorrecta');
-        alert($correo);
-        alert($clave);
         window.location = 'login.html';
         </script>
     ";
