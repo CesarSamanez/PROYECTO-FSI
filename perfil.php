@@ -217,7 +217,6 @@ include("conexion.php");
 							?>
 
 							<button class="btn btn-primary btn-lg" type="submit">GUARDAR CAMBIOS</button>
-							<br><button class="btn btn-danger btn-lg" type="submit">CANCELAR</button>
 								</form>
 							</div>
 						</div>
