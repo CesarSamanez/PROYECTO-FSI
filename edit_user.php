@@ -14,7 +14,7 @@ $clave = $_POST['clave'];
 $rol = $_POST['rol'];
 $estado = $_POST['estado'];
 
-$sql = "UPDATE usuario SET nombres='$nombres', apellidos='$apellidos', genero='$genero', dni='$dni', celular='$celular', correo='$correo', clave='$clave', rol='$rol', estado='$estado' WHERE codigo=$codigo";
+$sql = "UPDATE usuario SET nombres='$nombres', apellidos='$apellidos', genero='$genero', dni='$dni', celular='$celular', correo='$correo', clave='$clave', rol='$rol', estado='$estado' WHERE dni=$dni";
 
 if ($conexion->query($sql) === TRUE) {
         echo "<script>";
