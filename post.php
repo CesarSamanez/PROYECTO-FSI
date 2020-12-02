@@ -146,22 +146,11 @@ include("conexion.php");
                         while ($row = $result->fetch_assoc()) {
                     ?>
                             <div id="slider-commercial" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
                                     <div class="item active">
                                         <?php
-                                        echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" />';
+                                        echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" class="img-responsive"/>';
                                         ?>
                                     </div>
-
-                                </div>
-                                <a class="left carousel-control" href="#slider-commercial" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="right carousel-control" href="#slider-commercial" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
                             </div>
 
 
