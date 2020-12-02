@@ -108,13 +108,14 @@ include("conexion.php");
 						<div class="full-width post-user-info" style="margin: 0 !important;">
 							<!--<i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>-->
 							<img src="assets/img/user.png" class="NavBar-Nav-icon" alt="User">
-							<p class="full-width"><small><?php echo $_SESSION['nombres']; ?></small></p>
+							<p class="full-width"><small><?php echo $_SESSION['nombres']; ?> <?php echo $_SESSION['apellidos']; ?></small></p>
+							<br>
 							<div class="full-width div-table">
 							</div>
 						</div>
 						<div class="full-width list-group" style="border-radius: 0;">
 							<div class="list-group-item text-center">
-								<small>Desde Junio 2016</small>
+								<small><?php echo date_create()->format('Y-m-d H:i:s'); ?> </small>
 							</div>
 
 							<a href="perfil.html" class="list-group-item">
