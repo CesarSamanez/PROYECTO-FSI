@@ -218,16 +218,16 @@ include("conexion.php");
                     </div>
                     <div class="clearfix"></div>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <?php echo $row['DIRECCION_UBICACION']; ?>
+                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><b>Dirección:</b> <?php echo $row['DIRECCION_UBICACION']; ?>
                     </p>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <?php echo $row['DISTRITO_UBICACION']; ?>
+                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><b>Distrito:</b> <?php echo $row['DISTRITO_UBICACION']; ?>
                     </p>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <?php echo $row['PROVINCIA_UBICACION']; ?>
+                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><b>Provincia:</b> <?php echo $row['PROVINCIA_UBICACION']; ?>
                     </p>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <?php echo $row['DEPARTAMENTO_UBICACION']; ?>
+                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i><b>departamento:</b> <?php echo $row['DEPARTAMENTO_UBICACION']; ?>
                     </p>
                     <div class="page-header">
                         <h3 class="text-light text-center">Comparte este anuncio</small></h1>
