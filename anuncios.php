@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-
+<?php
+include("conexion.php");
+?>
 <html lang="es">
 
 <head>
