@@ -145,7 +145,7 @@ include("conexion.php");
                             <i class="fa fa-user container-login-icon" aria-hidden="true"></i>
                             <h4 class="text-center text-light">MODIFICAR UNA CUENTA</h4>
                             <br>
-                            <form action=""">
+                            <form action="edit_user.php" method="POST">
 							<div class=" form-group">
                                 <input type="text" name="nombres" value="<?php echo $row['nombres']; ?>" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
                         </div>
@@ -173,11 +173,11 @@ include("conexion.php");
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="dni" value="<?php echo $row['dni']; ?>" minlength="8" maxlength="8" class="form-control input-lg" placeholder="Dni" required pattern="[0-9]{8}" title="El campo solo debe contener dígitos numéricos.">
+                            <input type="number" name="dni" value="<?php echo $row['dni']; ?>" minlength="8" maxlength="8" class="form-control input-lg" placeholder="Dni" required pattern="[0-9]{8}" title="El campo solo debe contener dígitos numéricos.">
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="celular" value="<?php echo $row['celular']; ?>" minlength="9" maxlength="9" class="form-control input-lg" placeholder="Celular" required pattern="[0-9]+" title="El campo solo debe contener dígitos numéricos.">
+                            <input type="number" name="celular" value="<?php echo $row['celular']; ?>" minlength="9" maxlength="9" class="form-control input-lg" placeholder="Celular" required pattern="[0-9]+" title="El campo solo debe contener dígitos numéricos.">
                         </div>
 
                         <div class="form-group">
