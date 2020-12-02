@@ -161,7 +161,10 @@ include("conexion.php");
 							</div>
 							<!-- Contenido-->
 							<div class="full-width" style="padding: 15px; border: 1px solid #E1E1E1;">
-								<form action="edit_user.php" method="POST">
+								<form action="edit_perfil.php" method="POST">
+									<div class="form-group">
+
+									</div>
 									<div class=" form-group">
 										<label>Nombres</label>
 										<input type="text" name="nombres" value="<?php echo $row['nombres']; ?>" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
