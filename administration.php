@@ -152,7 +152,7 @@ include("conexion.php");
                             <td><?php echo $row['fecha_creacion']; ?></td>
                             <td>
                                 <a type="button" name="<?php echo $row['codigo']; ?>" href="editUser.php?codigo=<?php echo $row['codigo']; ?>" class="btn btn-warning">Editar</a>
-                                <button type="button" name="<?php echo $row['codigo']; ?>"  onclick="eliminar()" class="btn btn-danger">Eliminar</button>
+                                <button name="<?php echo $row['codigo']; ?>" onclick="eliminar()" class="btn btn-danger">Eliminar</button>
                             </td>
                         </tr>
                 <?php
