@@ -280,14 +280,14 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Otros detalles</label>
 							<div class="col-sm-7">
-								<textarea class="form-control" name="otros_detalles" maxlength="100" rows="3" placeholder="Otros detalles" required></textarea>
+								<textarea class="form-control" name="otros_detalles" maxlength="100" rows="3" placeholder="Otros detalles"></textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Aforo</label>
 							<div class="col-sm-7">
-								<input type="text" name="aforo" maxlength="5" class="form-control" placeholder="Aforo" required pattern="[0-9]+">
+								<input type="text" name="aforo" maxlength="5" class="form-control" placeholder="Aforo" required pattern="([0-9]+)?">
 							</div>
 						</div>
 
@@ -302,7 +302,6 @@ include("conexion.php");
 							<p class="text-muted text-center archivo">Elige un archivo</p>
 						</div>
 						<h5> 
-						<br><?php echo $_SESSION['nombres']; ?></h5>
 						<h3 class="text-info">Datos de contacto</h3>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Nombres</label>
