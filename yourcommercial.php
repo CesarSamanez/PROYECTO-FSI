@@ -137,6 +137,7 @@ include("conexion.php");
 					</div>
 					<!-- Contenido-->
 
+					<div class="full-width container-post">
 					<?php
 
 					$sql = "select tipo_inmueble.nombre, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, inmueble.fecha_creacion from inmueble
@@ -155,25 +156,26 @@ include("conexion.php");
 					if ($result->num_rows > 0) {
 						while ($row = $result->fetch_assoc()) {
 					?>
-							<div class="full-width container-post">
+							
 								<div class="full-width post">
 									<figure class="full-width post-img">
 										<!-- Tamaño de la imagen 248x186 pixeles-->
 										<img src="<?php echo $row['inmueble_detalles.foto']; ?>" alt="" class="img-responsive">
 									</figure>
 									<div class="full-width post-info">
-										<a href="post.html" class="full-width post-info-title"><?php echo $row['tipo_inmueble.nombre']; ?></a>
+										<a href="post.html" class="full-width post-info-title"><?php echo $row['tipo_inmueble']['nombre']; ?></a>
 										<p class="full-width post-info-price">$7,000</p>
 										<span class="post-info-zone">Zona</span>
 										<span class="post-info-date">hoy 07:00</span>
 										<i class="fa fa-heart-o post-info-like"></i>
 									</div>
 								</div>
-							</div>
+							
 					<?php
 						}
 					}
 					?>
+					</div>
 					<div class="clearfix"></div>
 
 				</div>
