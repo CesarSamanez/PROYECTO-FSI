@@ -244,7 +244,7 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Área</label>
 							<div class="col-sm-7">
-								<input type="text" name="area" maxlength="5" class="form-control" placeholder="Área" required pattern="([0-9]+[\.]{1})?[0-9]+">
+								<input type="text" name="area" maxlength="5" class="form-control" placeholder="Área" required pattern="(([0-9]+[\.]{1})?[0-9]+)?">
 							</div>
 						</div>
 
