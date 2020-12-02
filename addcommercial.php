@@ -143,7 +143,12 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Tipo de inmueble</label>
 							<div class="col-sm-7">
-								<input type="text" name="tipo_inmueble" maxlength="30" class="form-control" placeholder="Tipo de inmueble" required pattern="[a-zA-Z\ ]+" title="Solo letras.">
+								<select name="tipo_inmueble" class="form-control input-md" required>
+									<option value="" disable selected>Selecciona el tipo de inmueble</option>
+									<option value="Terreno">Terreno</option>
+									<option value="Hogar">Hogar</option>
+									<option value="Departamento">Departamento</option>
+								</select>
 							</div>
 						</div>
 
@@ -301,40 +306,40 @@ include("conexion.php");
 							<br>
 							<p class="text-muted text-center archivo">Elige un archivo</p>
 						</div>
-						<h5> 
-						<h3 class="text-info">Datos de contacto</h3>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Nombres</label>
-							<div class="col-sm-7">
-								<input type="text" name="nombres" value="<?php echo $_SESSION['nombres']; ?>" class="form-control" placeholder="Nombres" disabled>
+						<h5>
+							<h3 class="text-info">Datos de contacto</h3>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Nombres</label>
+								<div class="col-sm-7">
+									<input type="text" name="nombres" value="<?php echo $_SESSION['nombres']; ?>" class="form-control" placeholder="Nombres" disabled>
+								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Apellidos</label>
-							<div class="col-sm-7">
-								<input type="text" name="apellidos" value="<?php echo $_SESSION['apellidos']; ?>" class="form-control" placeholder="Apellidos" disabled>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Apellidos</label>
+								<div class="col-sm-7">
+									<input type="text" name="apellidos" value="<?php echo $_SESSION['apellidos']; ?>" class="form-control" placeholder="Apellidos" disabled>
+								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Celular</label>
-							<div class="col-sm-7">
-								<input type="text" name="celular" value="<?php echo $_SESSION['celular']; ?>" class="form-control" placeholder="Celular" disabled>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Celular</label>
+								<div class="col-sm-7">
+									<input type="text" name="celular" value="<?php echo $_SESSION['celular']; ?>" class="form-control" placeholder="Celular" disabled>
+								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<label class="col-sm-3 control-label">E-Mail</label>
-							<div class="col-sm-7">
-								<input type="email" name="email" value="<?php echo $_SESSION['correo']; ?>" class="form-control" placeholder="E-Mail" disabled>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">E-Mail</label>
+								<div class="col-sm-7">
+									<input type="email" name="email" value="<?php echo $_SESSION['correo']; ?>" class="form-control" placeholder="E-Mail" disabled>
+								</div>
 							</div>
-						</div>
-						<br>
-						<p class="text-center">
-							<button type="submit" class="btn btn-info">Continuar</button>
-						</p>
-						<br>
+							<br>
+							<p class="text-center">
+								<button type="submit" class="btn btn-info">Continuar</button>
+							</p>
+							<br>
 
 					</form>
 				</div>
