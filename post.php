@@ -186,16 +186,17 @@ include("conexion.php");
                                 </div>
                                 <div class="full-width div-table-row">
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        <b>Precio: </b>$. <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?> metros.
+                                        <b>Precio: </b>$. <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?> 
                                     </div>
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        <b>Aforo: </b> <?php echo $row['AFORO_INMUEBLE_DETALLES']; ?> metros.
+                                        <b>Aforo: </b> <?php echo $row['AFORO_INMUEBLE_DETALLES']; ?>
                                     </div>
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        <b>Otros Detalles: </b> <?php echo $row['OTROS_DETALLES_INMUEBLE_DETALLES']; ?> metros.
+                                        <b>Otros Detalles: </b> <?php echo $row['OTROS_DETALLES_INMUEBLE_DETALLES']; ?> 
                                     </div>
                                 </div>
                             </div>
+                            <br>
                             <p class="lead">
                                 <strong><b>Publicado: </b><?php echo $row['FECHA_CREACION_INMUEBLE']; ?></strong>
                             </p>
