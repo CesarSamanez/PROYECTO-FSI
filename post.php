@@ -166,9 +166,13 @@ include("conexion.php");
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
                                         <b>Ancho: </b> <?php echo $row['ANCHO_INMUEBLE_DETALLES']; ?> metros.
                                     </div>
+                                </div>
+                                <div class="full-width div-table-row">
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
                                         <b>Largo: </b> <?php echo $row['LARGO_INMUEBLE_DETALLES']; ?> metros.
                                     </div>
+                                </div>
+                                <div class="full-width div-table-row">
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
                                         <b>Área: </b> <?php echo $row['AREA_INMUEBLE_DETALLES']; ?> metros.
                                     </div>
@@ -177,9 +181,13 @@ include("conexion.php");
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
                                         <b>Precio: </b>S/.<?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?>
                                     </div>
+                                </div>
+                                <div class="full-width div-table-row">
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
                                         <b>Aforo: </b> <?php echo $row['AFORO_INMUEBLE_DETALLES']; ?>
                                     </div>
+                                </div>
+                                <div class="full-width div-table-row">
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
                                         <b>Otros Detalles: </b> <?php echo $row['OTROS_DETALLES_INMUEBLE_DETALLES']; ?>
                                     </div>
