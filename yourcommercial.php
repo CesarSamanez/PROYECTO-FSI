@@ -65,7 +65,7 @@ include("conexion.php");
 						<i class="fa fa-life-ring fa-fw hidden-md hidden-lg" aria-hidden="true"></i> AYUDA
 					</a>
 				</li>
-				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">Nombre</a></li>
+				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo $_SESSION['nombres']; ?></a></li>
 				<li class="hidden-xs hidden-sm">
 					<!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
 					<img src="assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
@@ -115,7 +115,8 @@ include("conexion.php");
 						</div>
 						<div class="full-width list-group" style="border-radius: 0;">
 							<div class="list-group-item text-center">
-								<small>Última conexión<?php echo "\n" . date_create()->format('d-m-Y H:i:s'); ?> </small>
+								<small>Última conexión</small>
+								<small><?php echo date_create()->format('d-m-Y H:i:s'); ?> </small>
 							<br>
 							</div>
 							
