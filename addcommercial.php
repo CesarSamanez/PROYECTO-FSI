@@ -230,28 +230,28 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Ancho</label>
 							<div class="col-sm-7">
-								<input type="text" name="ancho" maxlength="5" class="form-control" placeholder="Ancho" required pattern="([0-9]+[\.]{1})?[0-9]+">
+								<input type="number" step="any" name="ancho" maxlength="5" class="form-control" placeholder="Ancho">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Largo</label>
 							<div class="col-sm-7">
-								<input type="text" name="largo" maxlength="5" class="form-control" placeholder="Largo" required pattern="([0-9]+[\.]{1})?[0-9]+">
+								<input type="number" step="any" name="largo" maxlength="5" class="form-control" placeholder="Largo">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Área</label>
 							<div class="col-sm-7">
-								<input type="text" name="area" maxlength="5" class="form-control" placeholder="Área" required pattern="(([0-9]+[\.]{1})?[0-9]+)?">
+								<input type="number" step="any" name="area" maxlength="5" class="form-control" placeholder="Área">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Precio</label>
 							<div class="col-sm-7">
-								<input type="text" name="precio" maxlength="8" class="form-control" placeholder="Precio" required pattern="([0-9]+[\.]{1})?[0-9]+">
+								<input type="number" step="any" name="precio" maxlength="8" class="form-control" placeholder="Precio">
 							</div>
 						</div>
 
@@ -287,7 +287,7 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Aforo</label>
 							<div class="col-sm-7">
-								<input type="text" name="aforo" maxlength="5" class="form-control" placeholder="Aforo" required pattern="([0-9]+)?">
+								<input type="number" name="aforo" maxlength="5" class="form-control" placeholder="Aforo">
 							</div>
 						</div>
 
