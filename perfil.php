@@ -163,14 +163,17 @@ include("conexion.php");
 							<div class="full-width" style="padding: 15px; border: 1px solid #E1E1E1;">
 								<form action="edit_user.php" method="POST">
 									<div class=" form-group">
+										<label>Nombres</label>
 										<input type="text" name="nombres" value="<?php echo $row['nombres']; ?>" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
 									</div>
 
 									<div class="form-group">
+										<label>Apellidos</label>
 										<input type="text" name="apellidos" value="<?php echo $row['apellidos']; ?>" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Apellidos" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
 									</div>
 
 									<div class="form-group">
+										<label>Género</label>
 										<select name="genero" class="form-control input-lg" required>
 											<option value="<?php echo $row['genero']; ?>">
 												<?php
@@ -189,18 +192,22 @@ include("conexion.php");
 									</div>
 
 									<div class="form-group">
+										<label>Dni:</label>
 										<input type="text" name="dni" value="<?php echo $row['dni']; ?>" minlength="8" maxlength="8" class="form-control input-lg" placeholder="Dni" required pattern="[0-9]{8}" title="El campo solo debe contener dígitos numéricos.">
 									</div>
 
 									<div class="form-group">
+										<label>Celular</label>
 										<input type="text" name="celular" value="<?php echo $row['celular']; ?>" minlength="9" maxlength="9" class="form-control input-lg" placeholder="Celular" required pattern="[0-9]+" title="El campo solo debe contener dígitos numéricos.">
 									</div>
 
 									<div class="form-group">
+										<label>Correo</label>
 										<input type="email" name="correo" value="<?php echo $row['correo']; ?>" maxlength="20" class="form-control input-lg" placeholder="Correo" required="">
 									</div>
 
 									<div class="form-group">
+										<label>Clave</label>
 										<input type="password" name="clave" value="<?php echo $row['clave']; ?>" maxlength="10" class="form-control input-lg" placeholder="Clave" required="">
 									</div>
 
