@@ -162,6 +162,7 @@ include("conexion.php");
 										<!-- Tamaño de la imagen 248x186 pixeles-->
 										<?php
 											echo '<img src="data:image/png;base64,' . base64_encode( $row['FOTO_INMUEBLE_DETALLES'] ) . '" alt="" class="img-responsive" />';
+											echo '<img src="data:image/jpeg;base64,' . base64_encode( $row['FOTO_INMUEBLE_DETALLES'] ) . '" alt="" class="img-responsive" />';
 										?>
 									</figure>
 									<div class="full-width post-info">
