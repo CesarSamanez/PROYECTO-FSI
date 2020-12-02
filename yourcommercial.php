@@ -160,7 +160,7 @@ include("conexion.php");
 								<div class="full-width post">
 									<figure class="full-width post-img">
 										<!-- Tamaño de la imagen 248x186 pixeles-->
-										<img src="<?php echo $row['foto']; ?>" alt="" class="img-responsive">
+										<img src="" alt="" class="img-responsive">
 									</figure>
 									<div class="full-width post-info">
 										<a href="post.html" class="full-width post-info-title"><?php echo $row['nombre']; ?></a>
