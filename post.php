@@ -116,50 +116,15 @@ include("conexion.php");
 			</div>
 		</div>
 	</section>
-	<!-- ====== Buscador movil ======-->
-	<section class="full-width hidden-md hidden-lg Search-mobile">
-		<form action="commercial.html" style="padding-top: 15px;">
-			<div class="form-group">
-			    <input type="text" class="form-control input-lg" placeholder="Estoy buscado..." required="">
-			</div>
-			<div class="form-group">
-			    <input type="text" class="form-control input-lg" placeholder="Provincia, ciudad, distrito..." required="">
-			</div>
-			<button class="btn btn-danger btn-lg" type="submit">BUSCAR</button>
-		</form>
-	</section>
+
 	<!-- ====== Contenido de pagina ======-->
 	<section class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<form action="commercial.html" class="form-inline text-center">
-						<div class="form-group">
-							<input type="text" class="form-control input-lg" placeholder="Estoy buscando...">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control input-lg" placeholder="Ciudad, Provincia, Distrito...">
-						</div>
-						<button type="submit" class="btn btn-danger btn-lg">BUSCAR</button>
-					</form>
-				</div>
-			</div>
-		</div>
+		
 		<hr>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-8">
-					<ol class="breadcrumb">
-					  	<li><a href="#">Vehículos</a></li>
-					  	<li><a href="#">Marca</a></li>
-					  	<li class="active">Modelo</li>
-					</ol>
 					<div id="slider-commercial" class="carousel slide" data-ride="carousel">
-					  	<ol class="carousel-indicators">
-					    	<li data-target="#slider-commercial" data-slide-to="0" class="active"></li>
-					    	<li data-target="#slider-commercial" data-slide-to="1"></li>
-					    	<li data-target="#slider-commercial" data-slide-to="2"></li>
-					  	</ol>
 					  	<div class="carousel-inner" role="listbox">
 						    <div class="item active">
 						      	<img src="assets/img/post.jpg" alt="">
