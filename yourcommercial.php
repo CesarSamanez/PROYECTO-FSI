@@ -115,9 +115,10 @@ include("conexion.php");
 						</div>
 						<div class="full-width list-group" style="border-radius: 0;">
 							<div class="list-group-item text-center">
-								<small><?php echo date_create()->format('Y-m-d H:i:s'); ?> </small>
+								<small>Última conexión<?php echo date_create()->format('d-m-Y H:i:s'); ?> </small>
+							<br>
 							</div>
-
+							
 							<a href="perfil.html" class="list-group-item">
 								<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
 							</a>
