@@ -140,7 +140,7 @@ include("conexion.php");
 					<div class="full-width container-post">
 					<?php
 
-					$sql = "select tipo_inmueble.nombre, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, inmueble.fecha_creacion from inmueble
+					$sql = "select tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, inmueble.fecha_creacion from inmueble
 					INNER JOIN tipo_inmueble
 					ON inmueble.tipo_inmueble = tipo_inmueble.codigo
 					INNER JOin ubicacion
@@ -163,7 +163,7 @@ include("conexion.php");
 										<img src="" alt="" class="img-responsive">
 									</figure>
 									<div class="full-width post-info">
-										<a href="post.html" class="full-width post-info-title"><?php echo $row['nombre']; ?></a>
+										<a href="post.html" class="full-width post-info-title"><?php echo $row['NOMBRE_TIPO_INMUEBLE']; ?></a>
 										<p class="full-width post-info-price">$ <?php echo $row['precio']; ?></p>
 										<span class="post-info-zone">Zona: <?php echo $row['departamento']; ?></span>
 										<span class="post-info-date"> <?php $row['fecha_creacion']; ?></span>
