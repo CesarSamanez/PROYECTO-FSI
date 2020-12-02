@@ -167,12 +167,12 @@ include("conexion.php");
 									</div>
 									<div class=" form-group">
 										<label>Nombres</label>
-										<input type="text" name="nombres" value="<?php echo $row['nombres']; ?>" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
+										<input type="text" name="nombres" value="<?php echo $row['nombres']; ?>" minlength="1" maxlength="40" class="form-control input-lg" placeholder="Nombres" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
 									</div>
 
 									<div class="form-group">
 										<label>Apellidos</label>
-										<input type="text" name="apellidos" value="<?php echo $row['apellidos']; ?>" minlength="1" maxlength="30" class="form-control input-lg" placeholder="Apellidos" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
+										<input type="text" name="apellidos" value="<?php echo $row['apellidos']; ?>" minlength="1" maxlength="40" class="form-control input-lg" placeholder="Apellidos" required pattern="[A-Z|a-z| ]+" title="El campo solo debe contener letras.">
 									</div>
 
 									<div class="form-group">
@@ -206,7 +206,7 @@ include("conexion.php");
 
 									<div class="form-group">
 										<label>Correo</label>
-										<input type="email" name="correo" value="<?php echo $row['correo']; ?>" maxlength="20" class="form-control input-lg" placeholder="Correo" required="">
+										<input type="email" name="correo" value="<?php echo $row['correo']; ?>" maxlength="30" class="form-control input-lg" placeholder="Correo" required="">
 									</div>
 
 									<div class="form-group">
