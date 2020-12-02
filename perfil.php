@@ -122,7 +122,7 @@ include("conexion.php");
 								</div>
 								<div class="full-width list-group" style="border-radius: 0;">
 									<div class="list-group-item text-center">
-										<small>Creado: <?php echo $row['fecha_creacion']; ?></small>
+										<small><b>Creado:</b> <?php echo $row['fecha_creacion']; ?></small>
 									</div>
 									<a href="perfil.html" class="list-group-item active">
 										<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
