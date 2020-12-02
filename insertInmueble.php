@@ -81,9 +81,11 @@ $sql = "INSERT INTO inmueble (tipo_inmueble, ubicacion, inmueble_detalles, conta
 $query = mysqli_query($conexion, $sql);
 
 if ($query) {
-    echo "<script> alert('Registro exitoso Inmueble');    
+    echo "<script> alert('Registro exitoso Inmueble');  
+    window.location = 'addcommercial.php';  
     </script>";
 } else {
-    echo "<script> alert('No se pudo realizar el registro Inmueble');     
+    echo "<script> alert('No se pudo realizar el registro Inmueble');   
+    window.location = 'addcommercial.php';  
     </script>";
 }
