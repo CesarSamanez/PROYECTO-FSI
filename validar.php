@@ -11,8 +11,8 @@ $filas = mysqli_num_rows($query);
 
 if($filas > 0){
     echo "<script>
-        alert('Inicio de sesion exitoso');
-        </script>
+    window.location = 'index.html';
+    </script>
     ";
 }else{ 
     echo "$correo";
