@@ -301,8 +301,8 @@ include("conexion.php");
 							<br>
 							<p class="text-muted text-center archivo">Elige un archivo</p>
 						</div>
-
-						<br>
+						<h5> 
+						<br><?php echo $_SESSION['nombres']; ?></h5>
 						<h3 class="text-info">Datos de contacto</h3>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Nombres</label>
