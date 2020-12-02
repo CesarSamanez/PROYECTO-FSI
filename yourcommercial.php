@@ -118,15 +118,15 @@ include("conexion.php");
 								<p><small>Última conexión</small></p>
 								<p><small><?php echo date_create()->format('d-m-Y H:i:s'); ?> </small></p>
 							</div>
-							
+
 							<a href="perfil.html" class="list-group-item">
 								<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
 							</a>
-							
+
 							<a href="yourcommercial.html" class="list-group-item active">
 								<i class="fa fa-object-group fa-fw" aria-hidden="true"></i> TUS ANUNCIOS
 							</a>
-							
+
 						</div>
 					</div>
 				</div>
@@ -136,166 +136,46 @@ include("conexion.php");
 						<div>TUS ANUNCIOS</div>
 					</div>
 					<!-- Contenido-->
-					<div class="full-width container-post">
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
+
+					<?php
+
+					$sql = "select tipo_inmueble.nombre, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, inmueble.fecha_creacion from inmueble
+					INNER JOIN tipo_inmueble
+					ON inmueble.tipo_inmueble = tipo_inmueble.codigo
+					INNER JOin ubicacion
+					ON inmueble.ubicacion = ubicacion.codigo
+					INNER JOIN inmueble_detalles
+					ON inmueble.inmueble_detalles = inmueble_detalles.codigo
+					INNER JOIN usuario
+					ON inmueble.contacto = usuario.codigo
+					WHERE inmueble.contacto = " . $_SESSION['codigo'];
+
+					$result = $conexion->query($sql);
+
+					if ($result->num_rows > 0) {
+						while ($row = $result->fetch_assoc()) {
+					?>
+							<div class="full-width container-post">
+								<div class="full-width post">
+									<figure class="full-width post-img">
+										<!-- Tamaño de la imagen 248x186 pixeles-->
+										<img src="<?php echo $row['inmueble_detalles.foto']; ?>" alt="" class="img-responsive">
+									</figure>
+									<div class="full-width post-info">
+										<a href="post.html" class="full-width post-info-title"><?php echo $row['tipo_inmueble.nombre']; ?></a>
+										<p class="full-width post-info-price">$7,000</p>
+										<span class="post-info-zone">Zona</span>
+										<span class="post-info-date">hoy 07:00</span>
+										<i class="fa fa-heart-o post-info-like"></i>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-						<div class="full-width post">
-							<figure class="full-width post-img">
-								<!-- Tamaño de la imagen 248x186 pixeles-->
-								<img src="assets/img/post.jpg" alt="" class="img-responsive">
-							</figure>
-							<div class="full-width post-info">
-								<a href="post.html" class="full-width post-info-title">Título del anuncio</a>
-								<p class="full-width post-info-price">$7,000</p>
-								<span class="post-info-zone">Zona</span>
-								<span class="post-info-date">hoy 07:00</span>
-								<i class="fa fa-heart-o post-info-like"></i>
-							</div>
-						</div>
-					</div>
+					<?php
+						}
+					}
+					?>
 					<div class="clearfix"></div>
-					
+
 				</div>
 			</div>
 		</div>
