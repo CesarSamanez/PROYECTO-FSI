@@ -160,9 +160,8 @@ include("conexion.php");
 								<div class="full-width post">
 									<figure class="full-width post-img">
 										<!-- Tamaño de la imagen 248x186 pixeles-->
-										<img src="data:<?php echo $row['FOTO_INMUEBLE_DETALLES']; ?>;base64,<?php echo  base64_encode($row['FOTO_INMUEBLE_DETALLES']); ?>" alt="" class="img-responsive">
 										<?php
-											echo '<img src="data:image/png;base64,' . base64_encode( $row['FOTO_INMUEBLE_DETALLES'] ) . '" />';
+											echo '<img src="data:image/png;base64,' . base64_encode( $row['FOTO_INMUEBLE_DETALLES'] ) . '" alt="" class="img-responsive" />';
 										?>
 									</figure>
 									<div class="full-width post-info">
