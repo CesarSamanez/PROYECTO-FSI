@@ -155,10 +155,7 @@ include("conexion.php");
                                 <button name="<?php echo $row['codigo']; ?>" onclick="eliminar()" class="btn btn-danger">Eliminar</button>
                             </td>
                         </tr>
-                <?php
-                    }
-                }
-                ?>
+
             </tbody>
         </table>
 
@@ -200,13 +197,17 @@ include("conexion.php");
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        function eliminar(){
+        function eliminar() {
             var answer = window.confirm("¿Eliminar registro?");
-            if(answer){
+            if (answer) {
                 location = delete_user.php?codigo=<?php echo $row['codigo']; ?>;
             }
         }
     </script>
 </body>
+<?php
+                    }
+                }
+?>
 
 </html>
