@@ -206,21 +206,28 @@ include("conexion.php");
                         </div>
                     </div>
                     <div class="full-width" style="padding:10px; background-color: #F5F5F5; margin: 7px 0;">
-                        <p class="lead text-center"><strong>Honda S2000</strong></p>
-                        <p class="lead text-center" style="color: #F09000;"><strong>$7,000</strong></p>
+                        <p class="lead text-center"><strong><?php echo $row['NOMBRE_TIPO_INMUEBLE']; ?></strong></p>
+                        <p class="lead text-center" style="color: #F09000;"><strong><?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?></strong></p>
                     </div>
                     <div class="full-width post-user-info">
                         <i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>
                         <div>
-                            <p class="full-width lead">Nombre usuario</p>
-                            <p class="full-width"><i class="fa fa-mobile" aria-hidden="true"></i> 12345678</p>
+                            <p class="full-width lead"><?php echo $row['NOMBRES_USUARIO']; ?></p>
+                            <p class="full-width"><i class="fa fa-mobile" aria-hidden="true"></i> <?php echo $row['CELULAR_USUARIO']; ?></p>
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                    <a href="#!" class="btn btn-success btn-block">ENVIAR MENSAJE</a>
-                    <a href="#!" class="btn btn-success btn-block">LLAMAR</a>
                     <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
-                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> Valencia (46011)
+                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <?php echo $row['DIRECCION_UBICACION']; ?>
+                    </p>
+                    <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
+                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <?php echo $row['DISTRITO_UBICACION']; ?>
+                    </p>
+                    <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
+                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <?php echo $row['PROVINCIA_UBICACION']; ?>
+                    </p>
+                    <p class="lead text-light" style="margin: 7px 0; background-color: #F5F5F5;">
+                        <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i> <?php echo $row['DEPARTAMENTO_UBICACION']; ?>
                     </p>
                     <div class="page-header">
                         <h3 class="text-light text-center">Comparte este anuncio</small></h1>
@@ -261,11 +268,12 @@ include("conexion.php");
                 </div>
             </div>
         </div>
-<?php
+
+    </section>
+    <?php
                         }
                     }
 ?>
-    </section>
     <!-- ====== Pie de pagina ======-->
     <footer class="full-width footer">
         <div class="container">
