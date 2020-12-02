@@ -215,8 +215,9 @@ include("conexion.php");
 						}
 					}
 							?>
-
-							<button class="btn btn-primary btn-lg" type="submit">GUARDAR CAMBIOS</button>
+							<center>
+								<button class="btn btn-primary btn-lg" type="submit">GUARDAR CAMBIOS</button>
+							</center>
 								</form>
 							</div>
 						</div>
