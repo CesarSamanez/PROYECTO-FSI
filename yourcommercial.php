@@ -115,7 +115,7 @@ include("conexion.php");
 						</div>
 						<div class="full-width list-group" style="border-radius: 0;">
 							<div class="list-group-item text-center">
-								<small>Última conexión<?php echo date_create()->format('d-m-Y H:i:s'); ?> </small>
+								<small>Última conexión<?php echo "\n" . date_create()->format('d-m-Y H:i:s'); ?> </small>
 							<br>
 							</div>
 							
