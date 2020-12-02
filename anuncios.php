@@ -99,7 +99,31 @@ include("conexion.php");
 					<buttom class="btn btn-default btn-block visible-xs btn-dropdown-conatiner" data-drop-cont=".user-menu-xs">
 						<i class="fa fa-user fa-fw" aria-hidden="true"></i> MOSTRAR MENÚ <i class="fa fa-sort pull-right" aria-hidden="true"></i>
 					</buttom>
-				
+					<div class="full-width user-menu-xs">
+						<div class="full-width post-user-info" style="margin: 0 !important;">
+							<!--<i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>-->
+							<img src="assets/img/user.png" class="NavBar-Nav-icon" alt="User">
+							<p class="full-width"><small><?php echo strtoupper($_SESSION['nombres']); ?> <?php echo strtoupper($_SESSION['apellidos']); ?></small></p>
+							<br>
+							<div class="full-width div-table">
+							</div>
+						</div>
+						<div class="full-width list-group" style="border-radius: 0;">
+							<div class="list-group-item text-center">
+								<p><small>Última conexión</small></p>
+								<p><small><?php echo date_create()->format('d-m-Y H:i:s'); ?> </small></p>
+							</div>
+
+							<a href="perfil.html" class="list-group-item">
+								<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
+							</a>
+
+							<a href="yourcommercial.html" class="list-group-item active">
+								<i class="fa fa-object-group fa-fw" aria-hidden="true"></i> TUS ANUNCIOS
+							</a>
+
+						</div>
+					</div>
 				</div>
 				<div class="col-xs-12 col-sm-8 col-md-9">
 					<div class="full-width bar-info-user">
