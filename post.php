@@ -167,7 +167,7 @@ include("conexion.php");
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                     ?>
-                            <p class="lead text-justify">
+                            <p class="lead text-justify"><b>Descripción:</b> 
                                 <?php
                                 echo $row['DESCRIPCION_TIPO_INMUEBLE'];
                                 ?>
@@ -175,16 +175,13 @@ include("conexion.php");
                             <div class="full-width div-table">
                                 <div class="full-width div-table-row">
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        Matriculación: 2007
+                                        <b>Ancho: </b> <?php echo $row['ANCHO_INMUEBLE_DETALLES']; ?>
                                     </div>
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        Km: 150.000 - 159.999
+                                        <b>Largo: </b> <?php echo $row['LARGO_INMUEBLE_DETALLES']; ?>
                                     </div>
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        Combustible: Gasolina
-                                    </div>
-                                    <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        Cambio: Manual
+                                        <b>Área: </b> <?php echo $row['AREA_INMUEBLE_DETALLES']; ?>
                                     </div>
                                 </div>
                             </div>
