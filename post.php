@@ -144,29 +144,55 @@ include("conexion.php");
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                    <p class="lead text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At voluptate possimus molestiae et ipsum ad dignissimos dolore voluptatem velit, ratione error dolor mollitia animi nihil nisi similique. Perferendis, officiis, id.
-                    </p>
-                    <div class="full-width div-table">
-                        <div class="full-width div-table-row">
-                            <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                Matriculación: 2007
+
+                    <?php
+
+                    $sql = "select tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion DESCRIPCION_TIPO_INMUEBLE, ubicacion.direccion DIRECCION_UBICACION, ubicacion.distrito DISTRITO_UBICACION, 
+                    ubicacion.provincia PROVINCIA_UBICACION, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho ANCHO_INMUEBLE_DETALLES, inmueble_detalles.largo LARGO_INMUEBLE_DETALLES, 
+                    inmueble_detalles.area AREA_INMUEBLE_DETALLES, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda MONEDA_INMUEBLE_DETALLES, inmueble_detalles.otros_detalles OTROS_DETALLES_INMUEBLE_DETALLES, 
+                    inmueble_detalles.aforo AFORO_INMUEBLE_DETALLES, inmueble_detalles.foto FOTO_INMUEBLE_DETALLES, usuario.nombres NOMBRES_USUARIO, usuario.apellidos APELLIDOS_USUARIO, usuario.celular CELULAR_USUARIO, 
+                    usuario.correo CORREO_USUARIO, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
+					INNER JOIN tipo_inmueble
+					ON inmueble.tipo_inmueble = tipo_inmueble.codigo
+					INNER JOin ubicacion
+					ON inmueble.ubicacion = ubicacion.codigo
+					INNER JOIN inmueble_detalles
+					ON inmueble.inmueble_detalles = inmueble_detalles.codigo
+					INNER JOIN usuario
+					ON inmueble.contacto = usuario.codigo
+					WHERE inmueble.contacto = " . $_GET['codigo'];
+
+                    $result = $conexion->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
+
+                            <p class="lead text-justify">
+                                <?php
+                                echo $row['DESCRIPCION_TIPO_INMUEBLE'];
+                                ?>
+                            </p>
+                            <div class="full-width div-table">
+                                <div class="full-width div-table-row">
+                                    <div class="div-table-cell div-table-cell-xs div-table-cell-c">
+                                        Matriculación: 2007
+                                    </div>
+                                    <div class="div-table-cell div-table-cell-xs div-table-cell-c">
+                                        Km: 150.000 - 159.999
+                                    </div>
+                                    <div class="div-table-cell div-table-cell-xs div-table-cell-c">
+                                        Combustible: Gasolina
+                                    </div>
+                                    <div class="div-table-cell div-table-cell-xs div-table-cell-c">
+                                        Cambio: Manual
+                                    </div>
+                                </div>
                             </div>
-                            <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                Km: 150.000 - 159.999
-                            </div>
-                            <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                Combustible: Gasolina
-                            </div>
-                            <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                Cambio: Manual
-                            </div>
-                        </div>
-                    </div>
-                    <p class="lead">
-                        <strong>Publicado: hoy</strong>
-                        &nbsp; <strong>Visto 250 veces</strong>
-                    </p>
+                            <p class="lead">
+                                <strong>Publicado: hoy</strong>
+                                &nbsp; <strong>Visto 250 veces</strong>
+                            </p>
                 </div>
                 <div class="col-xs-12 col-sm-4">
                     <div class="full-width div-table">
@@ -235,6 +261,10 @@ include("conexion.php");
                 </div>
             </div>
         </div>
+<?php
+                        }
+                    }
+?>
     </section>
     <!-- ====== Pie de pagina ======-->
     <footer class="full-width footer">
