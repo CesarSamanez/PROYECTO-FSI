@@ -194,7 +194,7 @@ include("conexion.php");
                     <div class="full-width div-table">
                         <div class="full-width div-table-row">
                             <div class="div-table-cell div-table-cell-xs">
-                                <a href="commercial.html" class="btn btn-default btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i> Volver al listado</a>
+                                <a href="anuncios.php" class="btn btn-default btn-block"><i class="fa fa-angle-left" aria-hidden="true"></i> Volver al listado</a>
                             </div>
                         </div>
                     </div>
