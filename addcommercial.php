@@ -244,7 +244,7 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Área</label>
 							<div class="col-sm-7">
-								<input type="number" step="any" name="area" maxlength="5" class="form-control" placeholder="Área">
+								<input type="number" step="any" name="area" minlength="0" maxlength="5" class="form-control" placeholder="Área">
 							</div>
 						</div>
 
@@ -280,14 +280,14 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Otros detalles</label>
 							<div class="col-sm-7">
-								<textarea class="form-control" name="otros_detalles" maxlength="100" rows="3" placeholder="Otros detalles"></textarea>
+								<textarea class="form-control" name="otros_detalles" minlength="0" maxlength="100" rows="3" placeholder="Otros detalles"></textarea>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Aforo</label>
 							<div class="col-sm-7">
-								<input type="number" name="aforo" maxlength="5" class="form-control" placeholder="Aforo">
+								<input type="number" name="aforo" minlength="0" maxlength="5" class="form-control" placeholder="Aforo">
 							</div>
 						</div>
 
