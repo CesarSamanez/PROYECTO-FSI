@@ -166,6 +166,7 @@ include("conexion.php");
 										<a href="post.html" class="full-width post-info-title"><?php echo $row['NOMBRE_TIPO_INMUEBLE']; ?></a>
 										<p class="full-width post-info-price">$ <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?></p>
 										<span class="post-info-zone">Zona: <?php echo $row['DEPARTAMENTO_UBICACION']; ?></span>
+										<br>
 										<span class="post-info-date">Fecha: <?php echo $row['FECHA_CREACION_INMUEBLE']; ?></span>
 										<i class="fa fa-heart-o post-info-like"></i>
 									</div>
