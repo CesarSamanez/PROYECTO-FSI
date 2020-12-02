@@ -152,12 +152,13 @@ include("conexion.php");
                             <td><?php echo $row['fecha_creacion']; ?></td>
                             <td>
                                 <a type="button" name="<?php echo $row['codigo']; ?>" href="editUser.php?codigo=<?php echo $row['codigo']; ?>" class="btn btn-warning">Editar</a>
-                                <button onclick="eliminar()">Eliminar</button>
+                                <a type="button" name="<?php echo $row['codigo']; ?>" href="delete_user.php?codigo=<?php echo $row['codigo']; ?>" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
-                    <?php
+                <?php
                     }
-                    ?>
+                }
+                ?>
             </tbody>
         </table>
 
@@ -198,18 +199,6 @@ include("conexion.php");
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript">
-        function eliminar() {
-            var answer = window.confirm("¿Eliminar registro?");
-            if (answer) {
-                location = delete_user.php ? codigo = <?php echo $row['codigo']; ?>;
-            }
-        }
-    </script>
 </body>
-<?php
-
-                }
-?>
 
 </html>
