@@ -108,7 +108,7 @@ include("conexion.php");
 						<div class="full-width post-user-info" style="margin: 0 !important;">
 							<!--<i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>-->
 							<img src="assets/img/user.png" class="NavBar-Nav-icon" alt="User">
-							<p class="full-width"><small><?php echo $_SESSION['nombres']; ?> <?php echo $_SESSION['apellidos']; ?></small></p>
+							<p class="full-width"><small><?php echo strtoupper($_SESSION['nombres']); ?> <?php echo strtoupper($_SESSION['apellidos']); ?></small></p>
 							<br>
 							<div class="full-width div-table">
 							</div>
@@ -117,7 +117,6 @@ include("conexion.php");
 							<div class="list-group-item text-center">
 								<p><small>Última conexión</small></p>
 								<p><small><?php echo date_create()->format('d-m-Y H:i:s'); ?> </small></p>
-							<br>
 							</div>
 							
 							<a href="perfil.html" class="list-group-item">
