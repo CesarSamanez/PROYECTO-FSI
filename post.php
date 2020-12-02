@@ -123,51 +123,49 @@ include("conexion.php");
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
-                    <div id="slider-commercial" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="assets/img/post.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="assets/img/post.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="assets/img/post.jpg" alt="">
-                            </div>
-                        </div>
-                        <a class="left carousel-control" href="#slider-commercial" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#slider-commercial" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-
                     <?php
 
                     $sql = "select tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion DESCRIPCION_TIPO_INMUEBLE, ubicacion.direccion DIRECCION_UBICACION, ubicacion.distrito DISTRITO_UBICACION, 
-                    ubicacion.provincia PROVINCIA_UBICACION, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho ANCHO_INMUEBLE_DETALLES, inmueble_detalles.largo LARGO_INMUEBLE_DETALLES, 
-                    inmueble_detalles.area AREA_INMUEBLE_DETALLES, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda MONEDA_INMUEBLE_DETALLES, inmueble_detalles.otros_detalles OTROS_DETALLES_INMUEBLE_DETALLES, 
-                    inmueble_detalles.aforo AFORO_INMUEBLE_DETALLES, inmueble_detalles.foto FOTO_INMUEBLE_DETALLES, usuario.nombres NOMBRES_USUARIO, usuario.apellidos APELLIDOS_USUARIO, usuario.celular CELULAR_USUARIO, 
-                    usuario.correo CORREO_USUARIO, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
-					INNER JOIN tipo_inmueble
-					ON inmueble.tipo_inmueble = tipo_inmueble.codigo
-					INNER JOin ubicacion
-					ON inmueble.ubicacion = ubicacion.codigo
-					INNER JOIN inmueble_detalles
-					ON inmueble.inmueble_detalles = inmueble_detalles.codigo
-					INNER JOIN usuario
-					ON inmueble.contacto = usuario.codigo
-					WHERE inmueble.codigo = " . $_GET['codigo'];
+                            ubicacion.provincia PROVINCIA_UBICACION, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho ANCHO_INMUEBLE_DETALLES, inmueble_detalles.largo LARGO_INMUEBLE_DETALLES, 
+                            inmueble_detalles.area AREA_INMUEBLE_DETALLES, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda MONEDA_INMUEBLE_DETALLES, inmueble_detalles.otros_detalles OTROS_DETALLES_INMUEBLE_DETALLES, 
+                            inmueble_detalles.aforo AFORO_INMUEBLE_DETALLES, inmueble_detalles.foto FOTO_INMUEBLE_DETALLES, usuario.nombres NOMBRES_USUARIO, usuario.apellidos APELLIDOS_USUARIO, usuario.celular CELULAR_USUARIO, 
+                            usuario.correo CORREO_USUARIO, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
+                            INNER JOIN tipo_inmueble
+                            ON inmueble.tipo_inmueble = tipo_inmueble.codigo
+                            INNER JOin ubicacion
+                            ON inmueble.ubicacion = ubicacion.codigo
+                            INNER JOIN inmueble_detalles
+                            ON inmueble.inmueble_detalles = inmueble_detalles.codigo
+                            INNER JOIN usuario
+                            ON inmueble.contacto = usuario.codigo
+                            WHERE inmueble.codigo = " . $_GET['codigo'];
 
                     $result = $conexion->query($sql);
 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                     ?>
-                            <p class="lead text-justify"><b>Descripción:</b> 
+                            <div id="slider-commercial" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <?php
+                                        echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" />';
+                                        ?>
+                                    </div>
+
+                                </div>
+                                <a class="left carousel-control" href="#slider-commercial" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#slider-commercial" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+
+                            <p class="lead text-justify"><b>Descripción:</b>
                                 <?php
                                 echo $row['DESCRIPCION_TIPO_INMUEBLE'];
                                 ?>
@@ -186,13 +184,13 @@ include("conexion.php");
                                 </div>
                                 <div class="full-width div-table-row">
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        <b>Precio: </b>$. <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?> 
+                                        <b>Precio: </b>S/.<?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?>
                                     </div>
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
                                         <b>Aforo: </b> <?php echo $row['AFORO_INMUEBLE_DETALLES']; ?>
                                     </div>
                                     <div class="div-table-cell div-table-cell-xs div-table-cell-c">
-                                        <b>Otros Detalles: </b> <?php echo $row['OTROS_DETALLES_INMUEBLE_DETALLES']; ?> 
+                                        <b>Otros Detalles: </b> <?php echo $row['OTROS_DETALLES_INMUEBLE_DETALLES']; ?>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +212,7 @@ include("conexion.php");
                     </div>
                     <div class="full-width" style="padding:10px; background-color: #F5F5F5; margin: 7px 0;">
                         <p class="lead text-center"><strong><?php echo $row['NOMBRE_TIPO_INMUEBLE']; ?></strong></p>
-                        <p class="lead text-center" style="color: #F09000;"><strong>$. <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?></strong></p>
+                        <p class="lead text-center" style="color: #F09000;"><strong>S/.<?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?></strong></p>
                     </div>
                     <div class="full-width post-user-info">
                         <i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>
@@ -277,100 +275,100 @@ include("conexion.php");
         </div>
 
     </section>
-    <?php
+<?php
                         }
                     }
 ?>
-    <!-- ====== Pie de pagina ======-->
-    <footer class="full-width footer">
-        <div class="container">
-            <p class="text-semi-bold">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequatur quia voluptates voluptas accusamus aliquid in magni. Ullam non, at dolore accusantium ab fugit. Optio quidem blanditiis possimus at vero?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum cum, ipsa ad, natus est deserunt perferendis assumenda ipsum esse voluptates quasi consectetur, laboriosam, sint suscipit quam sunt totam incidunt corporis.
-            </p>
-        </div>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <h4 class="text-light text-center">Síguenos en las redes sociales</h4>
-                    <ul class="list-unstyled fullwidth text-center footer-social">
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-youtube" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <h4 class="text-light text-center">Descárgate nuestras apps gratuitas</h4>
-                    <ul class="list-unstyled fullwidth text-center footer-app-store">
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-apple" aria-hidden="true"></i> App Store
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-android" aria-hidden="true"></i> Play Store
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-windows" aria-hidden="true"></i> Windows Store
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+<!-- ====== Pie de pagina ======-->
+<footer class="full-width footer">
+    <div class="container">
+        <p class="text-semi-bold">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequatur quia voluptates voluptas accusamus aliquid in magni. Ullam non, at dolore accusantium ab fugit. Optio quidem blanditiis possimus at vero?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum cum, ipsa ad, natus est deserunt perferendis assumenda ipsum esse voluptates quasi consectetur, laboriosam, sint suscipit quam sunt totam incidunt corporis.
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <h4 class="text-light text-center">Síguenos en las redes sociales</h4>
+                <ul class="list-unstyled fullwidth text-center footer-social">
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <br>
-        <div class="container">
-            <div class="col-xs-12">
-                <ul class="list-unstyled text-center full-width footer-copyright">
-                    <li>&copy; 2016 Company</li>
-                    <li><a href="#!">Condiciones de uso</a></li>
-                    <li><a href="#!">Ayuda</a></li>
-                    <li><a href="#!">Políticas de uso</a></li>
-                    <li><a href="#!">Apps</a></li>
+            <div class="col-xs-12 col-sm-6">
+                <h4 class="text-light text-center">Descárgate nuestras apps gratuitas</h4>
+                <ul class="list-unstyled fullwidth text-center footer-app-store">
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-apple" aria-hidden="true"></i> App Store
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-android" aria-hidden="true"></i> Play Store
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <i class="fa fa-windows" aria-hidden="true"></i> Windows Store
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')
-    </script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/main.js"></script>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-xs-12">
+            <ul class="list-unstyled text-center full-width footer-copyright">
+                <li>&copy; 2016 Company</li>
+                <li><a href="#!">Condiciones de uso</a></li>
+                <li><a href="#!">Ayuda</a></li>
+                <li><a href="#!">Políticas de uso</a></li>
+                <li><a href="#!">Apps</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')
+</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
