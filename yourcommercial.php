@@ -114,11 +114,11 @@ include("conexion.php");
 								<p><small><?php echo date_create()->format('d-m-Y H:i:s'); ?> </small></p>
 							</div>
 
-							<a href="perfil.html" class="list-group-item">
+							<a href="perfil.php" class="list-group-item">
 								<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
 							</a>
 
-							<a href="yourcommercial.html" class="list-group-item active">
+							<a href="yourcommercial.php" class="list-group-item active">
 								<i class="fa fa-object-group fa-fw" aria-hidden="true"></i> TUS ANUNCIOS
 							</a>
 
