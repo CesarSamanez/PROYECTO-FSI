@@ -62,7 +62,7 @@ include("conexion.php");
 						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
 					</a>
 				</li>
-                <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">Nombre</a></li>
+                <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo strtoupper($_SESSION['nombres']); ?></a></li>
                 <li class="hidden-xs hidden-sm">
                     <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
                     <img src="assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
@@ -99,23 +99,30 @@ include("conexion.php");
 								<i class="fa fa-user fa-fw" aria-hidden="true"></i> MOSTRAR MENÚ <i class="fa fa-sort pull-right" aria-hidden="true"></i>
 							</buttom>
 							<div class="full-width user-menu-xs">
-								<div class="full-width post-user-info" style="margin: 0 !important;">
-									<!--<i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>-->
-									<img src="assets/img/user.png" class="NavBar-Nav-icon" alt="User">
-									<p class="full-width"><small><?php echo strtoupper($row['nombres']); ?></small></p>
-								</div>
-								<div class="full-width list-group" style="border-radius: 0;">
-									<div class="list-group-item text-center">
-										<small><b>Creado:</b> <?php echo $row['fecha_creacion']; ?></small>
-									</div>
-									<a href="perfil.php" class="list-group-item active">
-										<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
-									</a>
-									<a href="yourcommercial.php" class="list-group-item">
-										<i class="fa fa-object-group fa-fw" aria-hidden="true"></i> TUS ANUNCIOS
-									</a>
-								</div>
+						<div class="full-width post-user-info" style="margin: 0 !important;">
+							<!--<i class="fa fa-user NavBar-Nav-icon" aria-hidden="true"></i>-->
+							<img src="assets/img/user.png" class="NavBar-Nav-icon" alt="User">
+							<p class="full-width"><small><?php echo strtoupper($_SESSION['nombres']); ?> <?php echo strtoupper($_SESSION['apellidos']); ?></small></p>
+							<br>
+							<div class="full-width div-table">
 							</div>
+						</div>
+						<div class="full-width list-group" style="border-radius: 0;">
+							<div class="list-group-item text-center">
+								<p><small>Última conexión</small></p>
+								<p><small><?php echo date_create()->format('d-m-Y H:i:s'); ?> </small></p>
+							</div>
+
+							<a href="perfil.php" class="list-group-item">
+								<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
+							</a>
+
+							<a href="yourcommercial.php" class="list-group-item active">
+								<i class="fa fa-object-group fa-fw" aria-hidden="true"></i> TUS ANUNCIOS
+							</a>
+
+						</div>
+					</div>
 						</div>
 
 						<div class="col-xs-12 col-sm-8 col-md-9">

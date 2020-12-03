@@ -61,7 +61,7 @@ include("conexion.php");
 						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
 					</a>
 				</li>
-                <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">Nombre</a></li>
+                <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo strtoupper($_SESSION['nombres']); ?></a></li>
                 <li class="hidden-xs hidden-sm">
                     <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
                     <img src="assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
