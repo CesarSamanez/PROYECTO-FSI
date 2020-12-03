@@ -41,6 +41,11 @@ include("conexion.php");
 					</a>
 				</li>
 				<li>
+					<a href="anuncios.php">
+						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
+					</a>
+				</li>
+				<li>
 					<a href="addcommercial.php">
 						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
 						ANUNCIO
