@@ -26,7 +26,11 @@ if ($filas > 0) {
         $_SESSION["rol"] = $values["rol"];
         $_SESSION['estado'] = $values["estado"];
 
-        header('Location: index.html');
+        if ($_SESSION["rol"] == 1) {
+            header('Location: administration.php');
+        } else {
+            header('Location: index.html');
+        }
     }
 } else {
     echo "<script>
