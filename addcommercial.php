@@ -320,7 +320,7 @@ include("conexion.php");
 	</section>
 	<!-- ====== Pie de pagina ======-->
 	<footer class="full-width footer">
-		<h4 class="text-light text-center"><b>Proyecto Final Fundamentos de Sistemas de Información</b></h4>
+		<h4 class="text-light text-center"><b>Proyecto Fundamentos de Sistemas de Información</b></h4>
 		<ul class="list-unstyled fullwidth text-center footer-app-store">
 			<li>
 				<a href="#!">
