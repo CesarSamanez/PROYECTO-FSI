@@ -14,8 +14,6 @@ include("conexion.php");
     <script type="text/javascript">
         history.forward();
     </script>
-
-    <?php require 'validarCliente.php'; ?>
 </head>
 
 <body>

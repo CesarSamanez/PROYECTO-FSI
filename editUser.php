@@ -11,6 +11,8 @@ include("conexion.php");
     <title>Nueva cuenta</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
+    <?php require 'validarCliente.php'; ?>
+	<?php require 'revisar_admin.php'; ?>
 </head>
 
 <body>
