@@ -60,61 +60,13 @@ include("conexion.php");
 						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
 					</a>
 				</li>
-				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">INICIAR SESIÓN</a></li>
-				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin"
-						aria-hidden="true"></i></li>
 			</ul>
 		</nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
 		<i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
 	</div>
-	<!-- ====== PopUpLogin ======-->
-	<section class=" full-width PopUpLogin">
-		<ul class="nav nav-tabs nav-justified" role="tablist">
-			<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab"
-					data-toggle="tab">PARTICULAR</a></li>
-		</ul>
-		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane fade in active" id="LoginTab1">
-				<form action="validar.php" method="POST" style="padding-top: 15px;">
-					<div class="form-group">
-						<input type="email" name="email" class="form-control input-lg" placeholder="Email" required="">
-					</div>
-					<div class="form-group">
-						<input type="password" name="password" class="form-control input-lg" placeholder="Contraseña" required="">
-					</div>
-					<button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
-				</form>
-				<div class="full-width divider"></div>
-				<h4 class="text-center">¿Aún no tienes cuenta?</h4>
-				<a class="text-light" href="newaccount.html">CRÉATE UNA GRATIS</a>
-			</div>
-			<div role="tabpanel" class="tab-pane fade" id="LoginTab2">
-				<form action="validar.php" method="POST" style="padding-top: 15px;">
-					<div class="form-group">
-						<input type="email" name="email" class="form-control input-lg" placeholder="Email" required="">
-					</div>
-					<div class="form-group">
-						<input type="password" name="password" class="form-control input-lg" placeholder="Contraseña" required="">
-					</div>
-					<button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
-				</form>
-			</div>
-		</div>
-	</section>
 
-    <!-- ====== Buscador movil ======-->
-    <section class="full-width hidden-md hidden-lg Search-mobile">
-        <form action="commercial.html" style="padding-top: 15px;">
-            <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Estoy buscado..." required="">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Provincia, ciudad, distrito..." required="">
-            </div>
-            <button class="btn btn-danger btn-lg" type="submit">BUSCAR</button>
-        </form>
-    </section>
+
     <!-- ====== Contenido de pagina ======-->
     <section class="full-width section">
         <div class="container">
