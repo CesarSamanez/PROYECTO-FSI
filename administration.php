@@ -31,36 +31,31 @@ include("conexion.php");
                     </a>
                 </div>
                 <li>
-                    <a href="index.html">
-                        <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-                    </a>
-                </li>
-                <li>
-                    <a href="adcommercial.html">
-                        <i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PON TU
-                        ANUNCIO
-                    </a>
-                </li>
-                <li>
-                    <a href="yourcommercial.html">
-                        <i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
-                    </a>
-                </li>
-                <li>
-                    <a href="messages.html">
-                        <i class="fa fa-commenting-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> MENSAJES
-                    </a>
-                </li>
-                <li>
-                    <a href="favorites.html">
-                        <i class="fa fa-heart-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> FAVORITOS
-                    </a>
-                </li>
-                <li>
-                    <a href="help.html">
-                        <i class="fa fa-life-ring fa-fw hidden-md hidden-lg" aria-hidden="true"></i> AYUDA
-                    </a>
-                </li>
+					<a href="index.html">
+						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
+					</a>
+				</li>
+				<li>
+					<a href="adcommercial.html">
+						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
+						ANUNCIO
+					</a>
+				</li>
+				<li>
+					<a href="yourcommercial.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
+					</a>
+				</li>
+				<li>
+					<a href="perfil.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TU PERFIL
+					</a>
+				</li>
+				<li>
+					<a href="administration.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
+					</a>
+				</li>
                 <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">Nombre</a></li>
                 <li class="hidden-xs hidden-sm">
                     <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
@@ -71,27 +66,15 @@ include("conexion.php");
         <i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
         <i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
     </div>
+    
     <!-- ====== PopUpLogin ======-->
     <section class="full-width PopUpLogin PopUpLogin-2">
         <div class="full-width">
-            <a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
-            <a href="config.html"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Configuración</a>
             <div role="separator" class="divider"></div>
             <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
         </div>
     </section>
-    <!-- ====== Buscador movil ======-->
-    <section class="full-width hidden-md hidden-lg Search-mobile">
-        <form action="commercial.html" style="padding-top: 15px;">
-            <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Estoy buscado..." required="">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Provincia, ciudad, distrito..." required="">
-            </div>
-            <button class="btn btn-danger btn-lg" type="submit">BUSCAR</button>
-        </form>
-    </section>
+
     <!-- ====== Contenido de pagina ======-->
 
     <section class="full-width section" style="padding-left: 40px; padding-right: 40px;">
