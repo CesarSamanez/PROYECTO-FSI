@@ -33,6 +33,7 @@ include("conexion.php");
 						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
 					</a>
 				</li>
+				
 				<li>
 					<a href="anuncios.php">
 						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
