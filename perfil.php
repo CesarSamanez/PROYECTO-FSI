@@ -22,7 +22,7 @@ include("conexion.php");
 	<!-- ====== Barra de navegacion ======-->
 	<div class="full-width NavBar">
 		<div class="full-width text-semi-bold NavBar-logo">
-			Company
+			PROYECTO-FSI
 		</div>
 		<nav class=" full-width NavBar-Nav">
             <div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
