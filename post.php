@@ -21,102 +21,70 @@ include("conexion.php");
 <body>
     <!-- ====== Barra de navegacion ======-->
     <div class="full-width NavBar">
-        <div class="full-width text-semi-bold NavBar-logo">
-            Company
-        </div>
-        <nav class=" full-width NavBar-Nav">
+		<div class="full-width text-semi-bold NavBar-logo">
+			PROYECTO-FSI
+		</div>
+		<nav class=" full-width NavBar-Nav">
             <div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
             <ul class="list-unstyled full-width menu-mobile-c">
                 <div class="full-width hidden-md hidden-lg header-menu-mobile">
                     <i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
-                    <i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>
-                    <a href="login.html" class="btn btn-info header-menu-mobile-btn">INICIAR SESIÓN</a>
+                    <!--<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>-->
+                    <img src="assets/img/user.png" alt="" class="header-menu-mobile-icon">
                     <div class="divider"></div>
-                    <a href="newaccount.html" class="btn btn-primary header-menu-mobile-btn">CRÉATE UNA CUENTA</a>
+                    <a href="#!" class="btn btn-success header-menu-mobile-btn">
+                        <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
+                    </a>
                 </div>
                 <li>
-                    <a href="index.html">
-                        <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-                    </a>
+					<a href="index.html">
+						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
+					</a>
+				</li>
+				<li>
+					<a href="anuncios.php">
+						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
+					</a>
+				</li>
+				<li>
+					<a href="addcommercial.php">
+						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
+						ANUNCIO
+					</a>
+				</li>
+				<li>
+					<a href="yourcommercial.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
+					</a>
+				</li>
+				<li>
+					<a href="perfil.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TU PERFIL
+					</a>
+				</li>
+				<li>
+					<a href="administration.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
+					</a>
+				</li>
+                <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo strtoupper($_SESSION['nombres']); ?></a></li>
+                <li class="hidden-xs hidden-sm">
+                    <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
+                    <img src="assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
                 </li>
-                <li>
-                    <a href="adcommercial.html">
-                        <i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PON TU ANUNCIO
-                    </a>
-                </li>
-                <li>
-                    <a href="yourcommercial.html">
-                        <i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
-                    </a>
-                </li>
-                <li>
-                    <a href="messages.html">
-                        <i class="fa fa-commenting-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> MENSAJES
-                    </a>
-                </li>
-                <li>
-                    <a href="favorites.html">
-                        <i class="fa fa-heart-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> FAVORITOS
-                    </a>
-                </li>
-                <li>
-                    <a href="help.html">
-                        <i class="fa fa-life-ring fa-fw hidden-md hidden-lg" aria-hidden="true"></i> AYUDA
-                    </a>
-                </li>
-                <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">INICIAR SESIÓN</a></li>
-                <li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i></li>
             </ul>
         </nav>
-        <i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
-        <i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
-    </div>
+		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
+		<i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
+	</div>
     <!-- ====== PopUpLogin ======-->
-    <section class=" full-width PopUpLogin">
-        <ul class="nav nav-tabs nav-justified" role="tablist">
-            <li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab" data-toggle="tab">PARTICULAR</a></li>
-            <li role="presentation"><a href="#LoginTab2" aria-controls="LoginTab2" role="tab" data-toggle="tab">TIENDA VIRTUAL</a></li>
-        </ul>
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active" id="LoginTab1">
-                <form action="login.html" style="padding-top: 15px;">
-                    <div class="form-group">
-                        <input type="email" class="form-control input-lg" placeholder="Email" required="">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control input-lg" placeholder="Contraseña" required="">
-                    </div>
-                    <a class="text-left text-light" href="#!">No recuerdo mi contraseña</a>
-                    <div class="checkbox full-width">
-                        <label>
-                            <input type="checkbox"> No cerrar sesión
-                        </label>
-                    </div>
-                    <button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
-                </form>
-                <div class="full-width divider"></div>
-                <h4 class="text-center">¿Aún no tienes cuenta?</h4>
-                <a class="text-light" href="newaccount.html">CRÉATE UNA GRATIS</a>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="LoginTab2">
-                <form action="login.html" style="padding-top: 15px;">
-                    <div class="form-group">
-                        <input type="email" class="form-control input-lg" placeholder="Email" required="">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control input-lg" placeholder="Contraseña" required="">
-                    </div>
-                    <a class="text-left text-light" href="#!">No recuerdo mi contraseña</a>
-                    <div class="checkbox full-width">
-                        <label>
-                            <input type="checkbox"> No cerrar sesión
-                        </label>
-                    </div>
-                    <button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
-                </form>
-            </div>
-        </div>
-    </section>
+	<section class="full-width PopUpLogin PopUpLogin-2">
+		<div class="full-width">
+			<a href="perfil.php"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+			<div role="separator" class="divider"></div>
+			<a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
+		</div>
+	</section>
 
     <!-- ====== Contenido de pagina ======-->
     <section class="section">
@@ -269,87 +237,33 @@ include("conexion.php");
 ?>
 <!-- ====== Pie de pagina ======-->
 <footer class="full-width footer">
-    <div class="container">
-        <p class="text-semi-bold">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequatur quia voluptates voluptas accusamus aliquid in magni. Ullam non, at dolore accusantium ab fugit. Optio quidem blanditiis possimus at vero?
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum cum, ipsa ad, natus est deserunt perferendis assumenda ipsum esse voluptates quasi consectetur, laboriosam, sint suscipit quam sunt totam incidunt corporis.
-        </p>
-    </div>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <h4 class="text-light text-center">Síguenos en las redes sociales</h4>
-                <ul class="list-unstyled fullwidth text-center footer-social">
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-google-plus" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-youtube" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <h4 class="text-light text-center">Descárgate nuestras apps gratuitas</h4>
-                <ul class="list-unstyled fullwidth text-center footer-app-store">
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-apple" aria-hidden="true"></i> App Store
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-android" aria-hidden="true"></i> Play Store
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="fa fa-windows" aria-hidden="true"></i> Windows Store
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="container">
-        <div class="col-xs-12">
-            <ul class="list-unstyled text-center full-width footer-copyright">
-                <li>&copy; 2016 Company</li>
-                <li><a href="#!">Condiciones de uso</a></li>
-                <li><a href="#!">Ayuda</a></li>
-                <li><a href="#!">Políticas de uso</a></li>
-                <li><a href="#!">Apps</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
+		<h4 class="text-light text-center"><b>Proyecto Fundamentos de Sistemas de Información</b></h4>
+		<ul class="list-unstyled fullwidth text-center footer-app-store">
+			<li>
+				<a href="#!">
+					<i class="fa fa-university" aria-hidden="true"></i>Universidad Nacional de San
+					Agustín
+				</a>
+			</li>
+			<li>
+				<a href="#!">
+					<i class="fa fa-book" aria-hidden="true"></i> Escuela Profesional de Ingeniería de
+					Sistemas
+				</a>
+			</li>
+		</ul>
+
+		<br>
+		<div class="container">
+			<div class="col-xs-12">
+				<ul class="list-unstyled text-center full-width footer-copyright">
+					<li>&copy; 2020 Copyright</li>
+					<li><a href="#!">Equipo de Desarrollo</a></li>
+					<li><a href="#!">Repositorio</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
     window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')
