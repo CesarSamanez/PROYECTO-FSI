@@ -7,7 +7,7 @@ include("conexion.php");
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Tus anuncios</title>
+	<title>Últimos anuncios</title>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -16,19 +16,17 @@ include("conexion.php");
 	<!-- ====== Barra de navegacion ======-->
 	<div class="full-width NavBar">
 		<div class="full-width text-semi-bold NavBar-logo">
-			Company
+			PROYECTO-FSI
 		</div>
 		<nav class=" full-width NavBar-Nav">
 			<div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
 			<ul class="list-unstyled full-width menu-mobile-c">
 				<div class="full-width hidden-md hidden-lg header-menu-mobile">
 					<i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
-					<!--<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>-->
-					<img src="assets/img/user.png" alt="" class="header-menu-mobile-icon">
+					<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>
+					<a href="login.html" class="btn btn-info header-menu-mobile-btn">INICIAR SESIÓN</a>
 					<div class="divider"></div>
-					<a href="#!" class="btn btn-success header-menu-mobile-btn">
-						<i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
-					</a>
+					<a href="newaccount.html" class="btn btn-primary header-menu-mobile-btn">CRÉATE UNA CUENTA</a>
 				</div>
 				<li>
 					<a href="index.html">
@@ -36,35 +34,34 @@ include("conexion.php");
 					</a>
 				</li>
 				<li>
-					<a href="adcommercial.html">
-						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PON TU ANUNCIO
+					<a href="anuncios.php">
+						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
 					</a>
 				</li>
 				<li>
-					<a href="yourcommercial.html">
+					<a href="addcommercial.php">
+						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
+						ANUNCIO
+					</a>
+				</li>
+				<li>
+					<a href="yourcommercial.php">
 						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
 					</a>
 				</li>
 				<li>
-					<a href="messages.html">
-						<i class="fa fa-commenting-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> MENSAJES
+					<a href="perfil.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TU PERFIL
 					</a>
 				</li>
 				<li>
-					<a href="favorites.html">
-						<i class="fa fa-heart-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> FAVORITOS
+					<a href="administration.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
 					</a>
 				</li>
-				<li>
-					<a href="help.html">
-						<i class="fa fa-life-ring fa-fw hidden-md hidden-lg" aria-hidden="true"></i> AYUDA
-					</a>
-				</li>
-				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo strtoupper($_SESSION['nombres']); ?></a></li>
-				<li class="hidden-xs hidden-sm">
-					<!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
-					<img src="assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
-				</li>
+				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">INICIAR SESIÓN</a></li>
+				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin"
+						aria-hidden="true"></i></li>
 			</ul>
 		</nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
@@ -78,18 +75,6 @@ include("conexion.php");
 			<div role="separator" class="divider"></div>
 			<a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
 		</div>
-	</section>
-	<!-- ====== Buscador movil ======-->
-	<section class="full-width hidden-md hidden-lg Search-mobile">
-		<form action="commercial.html" style="padding-top: 15px;">
-			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Estoy buscado..." required="">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Provincia, ciudad, distrito..." required="">
-			</div>
-			<button class="btn btn-danger btn-lg" type="submit">BUSCAR</button>
-		</form>
 	</section>
 	<!-- ====== Contenido de pagina ======-->
 	<section class="full-width section">
