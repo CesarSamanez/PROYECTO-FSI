@@ -21,11 +21,7 @@ include("conexion.php");
 
 <body>
 	<!-- ====== Barra de navegacion ======-->
-	<div class="full-width NavBar">
-		<div class="full-width text-semi-bold NavBar-logo">
-			Company
-		</div>
-		<nav class=" full-width NavBar-Nav">
+	<nav class=" full-width NavBar-Nav">
 			<div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
 			<ul class="list-unstyled full-width menu-mobile-c">
 				<div class="full-width hidden-md hidden-lg header-menu-mobile">
@@ -41,59 +37,45 @@ include("conexion.php");
 					</a>
 				</li>
 				<li>
-					<a href="adcommercial.html">
-						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PON TU
+					<a href="addcommercial.php">
+						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
 						ANUNCIO
 					</a>
 				</li>
 				<li>
-					<a href="yourcommercial.html">
+					<a href="yourcommercial.php">
 						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
 					</a>
 				</li>
 				<li>
-					<a href="messages.html">
-						<i class="fa fa-commenting-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> MENSAJES
+					<a href="perfil.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TU PERFIL
 					</a>
 				</li>
 				<li>
-					<a href="favorites.html">
-						<i class="fa fa-heart-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> FAVORITOS
-					</a>
-				</li>
-				<li>
-					<a href="help.html">
-						<i class="fa fa-life-ring fa-fw hidden-md hidden-lg" aria-hidden="true"></i> AYUDA
+					<a href="administration.php">
+						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
 					</a>
 				</li>
 				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">INICIAR SESIÓN</a></li>
-				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i></li>
+				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin"
+						aria-hidden="true"></i></li>
 			</ul>
 		</nav>
-		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
-		<i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
-	</div>
 	<!-- ====== PopUpLogin ======-->
 	<section class=" full-width PopUpLogin">
 		<ul class="nav nav-tabs nav-justified" role="tablist">
-			<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab" data-toggle="tab">PARTICULAR</a></li>
-			<li role="presentation"><a href="#LoginTab2" aria-controls="LoginTab2" role="tab" data-toggle="tab">TIENDA
-					VIRTUAL</a></li>
+			<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab"
+					data-toggle="tab">PARTICULAR</a></li>
 		</ul>
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane fade in active" id="LoginTab1">
-				<form action="login.html" style="padding-top: 15px;">
+				<form action="validar.php" method="POST" style="padding-top: 15px;">
 					<div class="form-group">
-						<input type="email" class="form-control input-lg" placeholder="Email" required="">
+						<input type="email" name="email" class="form-control input-lg" placeholder="Email" required="">
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control input-lg" placeholder="Contraseña" required="">
-					</div>
-					<a class="text-left text-light" href="#!">No recuerdo mi contraseña</a>
-					<div class="checkbox full-width">
-						<label>
-							<input type="checkbox"> No cerrar sesión
-						</label>
+						<input type="password" name="password" class="form-control input-lg" placeholder="Contraseña" required="">
 					</div>
 					<button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
 				</form>
@@ -102,36 +84,19 @@ include("conexion.php");
 				<a class="text-light" href="newaccount.html">CRÉATE UNA GRATIS</a>
 			</div>
 			<div role="tabpanel" class="tab-pane fade" id="LoginTab2">
-				<form action="login.html" style="padding-top: 15px;">
+				<form action="validar.php" method="POST" style="padding-top: 15px;">
 					<div class="form-group">
 						<input type="email" class="form-control input-lg" placeholder="Email" required="">
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control input-lg" placeholder="Contraseña" required="">
 					</div>
-					<a class="text-left text-light" href="#!">No recuerdo mi contraseña</a>
-					<div class="checkbox full-width">
-						<label>
-							<input type="checkbox"> No cerrar sesión
-						</label>
-					</div>
 					<button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
 				</form>
 			</div>
 		</div>
 	</section>
-	<!-- ====== Buscador movil ======-->
-	<section class="full-width hidden-md hidden-lg Search-mobile">
-		<form action="commercial.html" style="padding-top: 15px;">
-			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Estoy buscado..." required="">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Provincia, ciudad, distrito..." required="">
-			</div>
-			<button class="btn btn-danger btn-lg" type="submit">BUSCAR</button>
-		</form>
-	</section>
+	
 	<!-- ====== Contenido de pagina ======-->
 	<section class="section">
 		<h2 class="text-center text-light">Publica tu anuncio gratis</h2>

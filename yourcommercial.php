@@ -79,18 +79,7 @@ include("conexion.php");
 			<a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
 		</div>
 	</section>
-	<!-- ====== Buscador movil ======-->
-	<section class="full-width hidden-md hidden-lg Search-mobile">
-		<form action="commercial.html" style="padding-top: 15px;">
-			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Estoy buscado..." required="">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control input-lg" placeholder="Provincia, ciudad, distrito..." required="">
-			</div>
-			<button class="btn btn-danger btn-lg" type="submit">BUSCAR</button>
-		</form>
-	</section>
+	
 	<!-- ====== Contenido de pagina ======-->
 	<section class="full-width section">
 		<div class="container">
