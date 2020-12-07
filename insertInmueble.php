@@ -14,7 +14,7 @@ $descripcion = $_POST['descripcion'];
 
 $sql = "INSERT INTO tipo_inmueble (nombre, descripcion) VALUES('$tipo_inmueble', '$descripcion')";
 $query = mysqli_query($conexion, $sql);
-
+/*
 if ($query) {
     echo "<script> alert('Registro exitoso Tipo Inmueble');    
     </script>";
@@ -23,7 +23,7 @@ if ($query) {
   
     </script>";
 }
-
+*/
 $codigoTipoInmueble = $conexion->insert_id;
 
 $direccion = $_POST['direccion'];
@@ -33,7 +33,7 @@ $distrito = $_POST['distrito'];
 
 $sql = "INSERT INTO ubicacion (direccion, distrito, provincia, departamento) VALUES('$direccion', '$distrito', '$provincia', '$departamento')";
 $query = mysqli_query($conexion, $sql);
-
+/*
 if ($query) {
     echo "<script> alert('Registro exitoso Ubicacion');    
     </script>";
@@ -41,7 +41,7 @@ if ($query) {
     echo "<script> alert('No se pudo realizar el registro Ubicacion'); 
    
     </script>";
-}
+}*/
 
 $codigoUbicacion = $conexion->insert_id;
 
@@ -63,7 +63,7 @@ if ($revisar !== false) {
 
     $sql = "INSERT INTO inmueble_detalles (ancho, largo, area, precio, moneda, otros_detalles, aforo, foto) VALUES('$ancho','$largo','$area','$precio','$moneda','$otros_detalles','$aforo','$imgContenido')";
     $query = mysqli_query($conexion, $sql);
-
+/*
     if ($query) {
         echo "<script> alert('Registro exitoso inmueble_detalles');    
     </script>";
@@ -71,7 +71,7 @@ if ($revisar !== false) {
         echo "Error: " . $sql . "->" . $conexion->error;
         echo "<script> alert('No se pudo realizar el registro inmueble_Detalles');  
     </script>";
-    }
+    }*/
 }
 $codigoInmuebleDetalles = $conexion->insert_id;
 
@@ -81,7 +81,7 @@ $sql = "INSERT INTO inmueble (tipo_inmueble, ubicacion, inmueble_detalles, conta
 $query = mysqli_query($conexion, $sql);
 
 if ($query) {
-    echo "<script> alert('Registro exitoso Inmueble');  
+    echo "<script> alert('Registro exitoso.');  
     window.location = 'addcommercial.php';  
     </script>";
 } else {
