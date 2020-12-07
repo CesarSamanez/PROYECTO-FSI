@@ -86,6 +86,6 @@ if ($query) {
     </script>";
 } else {
     echo "<script> alert('No se pudo realizar el registro Inmueble');   
-    window.location = 'addcommercial.php';  
+    window.location = 'yourcommercial.php';  
     </script>";
 }
