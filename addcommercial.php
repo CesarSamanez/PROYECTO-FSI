@@ -67,41 +67,16 @@ include("conexion.php");
 						aria-hidden="true"></i></li>
 			</ul>
 		</nav>
-	<!-- ====== PopUpLogin ======-->
-	<section class=" full-width PopUpLogin">
-		<ul class="nav nav-tabs nav-justified" role="tablist">
-			<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab"
-					data-toggle="tab">PARTICULAR</a></li>
-		</ul>
-		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane fade in active" id="LoginTab1">
-				<form action="validar.php" method="POST" style="padding-top: 15px;">
-					<div class="form-group">
-						<input type="email" name="email" class="form-control input-lg" placeholder="Email" required="">
-					</div>
-					<div class="form-group">
-						<input type="password" name="password" class="form-control input-lg" placeholder="Contraseña" required="">
-					</div>
-					<button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
-				</form>
-				<div class="full-width divider"></div>
-				<h4 class="text-center">¿Aún no tienes cuenta?</h4>
-				<a class="text-light" href="newaccount.html">CRÉATE UNA GRATIS</a>
-			</div>
-			<div role="tabpanel" class="tab-pane fade" id="LoginTab2">
-				<form action="validar.php" method="POST" style="padding-top: 15px;">
-					<div class="form-group">
-						<input type="email" class="form-control input-lg" placeholder="Email" required="">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control input-lg" placeholder="Contraseña" required="">
-					</div>
-					<button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
-				</form>
-			</div>
+	
+		<!-- ====== PopUpLogin ======-->
+	<section class="full-width PopUpLogin PopUpLogin-2">
+		<div class="full-width">
+			<a href="perfil.php"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+			<div role="separator" class="divider"></div>
+			<a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
 		</div>
 	</section>
-	
+
 	<!-- ====== Contenido de pagina ======-->
 	<section class="section">
 		<h2 class="text-center text-light">Publica tu anuncio gratis</h2>
