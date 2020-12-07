@@ -75,16 +75,17 @@ include("conexion.php");
             </ul>
         </nav>
         <i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
-        <i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
     </div>
 
+    
     <!-- ====== PopUpLogin ======-->
     <section class="full-width PopUpLogin PopUpLogin-2">
-        <div class="full-width">
-            <div role="separator" class="divider"></div>
-            <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
-        </div>
-    </section>
+		<div class="full-width">
+			<a href="perfil.php"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+			<div role="separator" class="divider"></div>
+			<a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
+		</div>
+	</section>
 
     <!-- ====== Contenido de pagina ======-->
 
