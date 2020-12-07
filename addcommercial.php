@@ -22,53 +22,51 @@ include("conexion.php");
 <body>
 	<!-- ====== Barra de navegacion ======-->
 	<nav class=" full-width NavBar-Nav">
-			<div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
-			<ul class="list-unstyled full-width menu-mobile-c">
-				<div class="full-width hidden-md hidden-lg header-menu-mobile">
-					<i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
-					<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>
-					<a href="login.html" class="btn btn-info header-menu-mobile-btn">INICIAR SESIÓN</a>
-					<div class="divider"></div>
-					<a href="newaccount.html" class="btn btn-primary header-menu-mobile-btn">CRÉATE UNA CUENTA</a>
-				</div>
-				<li>
-					<a href="index.html">
-						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-					</a>
-				</li>
-				<li>
-					<a href="anuncios.php">
-						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
-					</a>
-				</li>
-				<li>
-					<a href="addcommercial.php">
-						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
-						ANUNCIO
-					</a>
-				</li>
-				<li>
-					<a href="yourcommercial.php">
-						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
-					</a>
-				</li>
-				<li>
-					<a href="perfil.php">
-						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TU PERFIL
-					</a>
-				</li>
-				<li>
-					<a href="administration.php">
-						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
-					</a>
-				</li>
-				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!">INICIAR SESIÓN</a></li>
-				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin"
-						aria-hidden="true"></i></li>
-			</ul>
-		</nav>
-	
-		<!-- ====== PopUpLogin ======-->
+		<div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
+		<ul class="list-unstyled full-width menu-mobile-c">
+			<div class="full-width hidden-md hidden-lg header-menu-mobile">
+				<i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
+				<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>
+				<a href="login.html" class="btn btn-info header-menu-mobile-btn">INICIAR SESIÓN</a>
+				<div class="divider"></div>
+				<a href="newaccount.html" class="btn btn-primary header-menu-mobile-btn">CRÉATE UNA CUENTA</a>
+			</div>
+			<li>
+				<a href="index.html">
+					<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
+				</a>
+			</li>
+			<li>
+				<a href="anuncios.php">
+					<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
+				</a>
+			</li>
+			<li>
+				<a href="addcommercial.php">
+					<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
+					ANUNCIO
+				</a>
+			</li>
+			<li>
+				<a href="yourcommercial.php">
+					<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
+				</a>
+			</li>
+			<li>
+				<a href="perfil.php">
+					<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TU PERFIL
+				</a>
+			</li>
+			<li>
+				<a href="administration.php">
+					<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
+				</a>
+			</li>
+			<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i></li>
+		</ul>
+	</nav>
+
+	<!-- ====== PopUpLogin ======-->
 	<section class="full-width PopUpLogin PopUpLogin-2">
 		<div class="full-width">
 			<a href="perfil.php"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
@@ -283,6 +281,7 @@ include("conexion.php");
 							<br>
 							<p class="text-center">
 								<button type="submit" class="btn btn-info">Continuar</button>
+								<button class="btn btn-danger"><a>Cancelar</a></button>
 							</p>
 							<br>
 
