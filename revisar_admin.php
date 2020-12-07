@@ -5,7 +5,7 @@ session_start();
 if(empty($_SESSION)){
   echo "<script>";
   echo "alert('Debe iniciar sesión');";
-  echo "window.location = 'login.html';";
+  echo "window.location = 'login.php';";
   echo "</script>";
 }else{
   if($_SESSION["rol"]!=1){
