@@ -24,18 +24,18 @@ include("conexion.php");
 			PROYECTO-FSI
 		</div>
 		<nav class=" full-width NavBar-Nav">
-            <div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
-            <ul class="list-unstyled full-width menu-mobile-c">
-                <div class="full-width hidden-md hidden-lg header-menu-mobile">
-                    <i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
-                    <!--<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>-->
-                    <img src="assets/img/user.png" alt="" class="header-menu-mobile-icon">
-                    <div class="divider"></div>
-                    <a href="#!" class="btn btn-success header-menu-mobile-btn">
-                        <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
-                    </a>
-                </div>
-                <li>
+			<div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
+			<ul class="list-unstyled full-width menu-mobile-c">
+				<div class="full-width hidden-md hidden-lg header-menu-mobile">
+					<i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
+					<!--<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>-->
+					<img src="assets/img/user.png" alt="" class="header-menu-mobile-icon">
+					<div class="divider"></div>
+					<a href="#!" class="btn btn-success header-menu-mobile-btn">
+						<i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
+					</a>
+				</div>
+				<li>
 					<a href="index.html">
 						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
 					</a>
@@ -66,15 +66,14 @@ include("conexion.php");
 						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
 					</a>
 				</li>
-                <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo strtoupper($_SESSION['nombres']); ?></a></li>
-                <li class="hidden-xs hidden-sm">
-                    <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
-                    <img src="assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
-                </li>
-            </ul>
-        </nav>
+				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo strtoupper($_SESSION['nombres']); ?></a></li>
+				<li class="hidden-xs hidden-sm">
+					<!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
+					<img src="assets/img/user.png" alt="" class="NavBar-Nav-icon btn-PopUpLogin">
+				</li>
+			</ul>
+		</nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
-		<i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
 	</div>
 	<!-- ====== PopUpLogin ======-->
 	<section class="full-width PopUpLogin PopUpLogin-2">
@@ -84,7 +83,7 @@ include("conexion.php");
 			<a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
 		</div>
 	</section>
-	
+
 	<!-- ====== Contenido de pagina ======-->
 	<section class="full-width section">
 		<div class="container">
@@ -127,9 +126,9 @@ include("conexion.php");
 					<!-- Contenido-->
 
 					<div class="full-width container-post">
-					<?php
+						<?php
 
-					$sql = "select inmueble.codigo CODIGO_INMUEBLE, tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto FOTO_INMUEBLE_DETALLES, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
+						$sql = "select inmueble.codigo CODIGO_INMUEBLE, tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto FOTO_INMUEBLE_DETALLES, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
 					INNER JOIN tipo_inmueble
 					ON inmueble.tipo_inmueble = tipo_inmueble.codigo
 					INNER JOin ubicacion
@@ -140,17 +139,17 @@ include("conexion.php");
 					ON inmueble.contacto = usuario.codigo
 					WHERE inmueble.contacto = " . $_SESSION['codigo'];
 
-					$result = $conexion->query($sql);
+						$result = $conexion->query($sql);
 
-					if ($result->num_rows > 0) {
-						while ($row = $result->fetch_assoc()) {
-					?>
-							
+						if ($result->num_rows > 0) {
+							while ($row = $result->fetch_assoc()) {
+						?>
+
 								<div class="full-width post">
 									<figure class="full-width post-img">
 										<!-- Tamaño de la imagen 248x186 pixeles-->
 										<?php
-											echo '<img src="data:image/png;base64,' . base64_encode( $row['FOTO_INMUEBLE_DETALLES'] ) . '" alt="" class="img-responsive" />';
+										echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" class="img-responsive" />';
 										?>
 									</figure>
 									<div class="full-width post-info">
@@ -162,11 +161,11 @@ include("conexion.php");
 										<i class="fa fa-heart-o post-info-like"></i>
 									</div>
 								</div>
-							
-					<?php
+
+						<?php
+							}
 						}
-					}
-					?>
+						?>
 					</div>
 					<div class="clearfix"></div>
 
