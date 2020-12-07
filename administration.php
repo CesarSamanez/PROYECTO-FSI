@@ -28,11 +28,13 @@ include("conexion.php");
             <div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
             <ul class="list-unstyled full-width menu-mobile-c">
                 <div class="full-width hidden-md hidden-lg header-menu-mobile">
-                    <div class="full-width">
-                        <a href="perfil.php"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
-                        <div role="separator" class="divider"></div>
-                        <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
-                    </div>
+                    <i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
+                    <!--<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>-->
+                    <img src="assets/img/user.png" alt="" class="header-menu-mobile-icon">
+                    <div class="divider"></div>
+                    <a href="#!" class="btn btn-success header-menu-mobile-btn">
+                        <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
+                    </a>
                 </div>
                 <li>
                     <a href="index.html">
