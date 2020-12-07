@@ -75,7 +75,6 @@ include("conexion.php");
             </ul>
         </nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
-		<i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
 	</div>
 	<!-- ====== PopUpLogin ======-->
 	<section class="full-width PopUpLogin PopUpLogin-2">
@@ -118,11 +117,11 @@ include("conexion.php");
 								<p><small><?php echo date_create()->format('d-m-Y H:i:s'); ?> </small></p>
 							</div>
 
-							<a href="perfil.php" class="list-group-item">
+							<a href="perfil.php" class="list-group-item active">
 								<i class="fa fa-user fa-fw" aria-hidden="true"></i> TU PERFIL
 							</a>
 
-							<a href="yourcommercial.php" class="list-group-item active">
+							<a href="yourcommercial.php" class="list-group-item">
 								<i class="fa fa-object-group fa-fw" aria-hidden="true"></i> TUS ANUNCIOS
 							</a>
 
