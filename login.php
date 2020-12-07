@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+include("conexion.php");
+?>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Inicio de sesión</title>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">
+
+	<script type="text/javascript">
+		history.forward();
+	</script>
+
+	<?php require 'validarSesionActiva.php'; ?>
 </head>
 <body>
 	<!-- ====== Barra de navegacion ======-->
@@ -60,7 +70,6 @@
 			</ul>
 		</nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
-		<i class="fa fa-search hidden-md hidden-lg btn-mobile-menu btn-search-mobile" aria-hidden="true"></i>
 	</div>
 	
 	<!-- ====== Contenido de pagina ======-->
