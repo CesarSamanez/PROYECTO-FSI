@@ -11,11 +11,11 @@ include("conexion.php");
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript">
-		history.forward();
-	</script>
+        history.forward();
+    </script>
 
     <?php require 'validarCliente.php'; ?>
-	<?php require 'revisar_admin.php'; ?>
+    <?php require 'revisar_admin.php'; ?>
 </head>
 
 <body>
@@ -28,45 +28,43 @@ include("conexion.php");
             <div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
             <ul class="list-unstyled full-width menu-mobile-c">
                 <div class="full-width hidden-md hidden-lg header-menu-mobile">
-                    <i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
-                    <!--<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>-->
-                    <img src="assets/img/user.png" alt="" class="header-menu-mobile-icon">
-                    <div class="divider"></div>
-                    <a href="#!" class="btn btn-success header-menu-mobile-btn">
-                        <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión
-                    </a>
+                    <div class="full-width">
+                        <a href="perfil.php"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+                        <div role="separator" class="divider"></div>
+                        <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
+                    </div>
                 </div>
                 <li>
-					<a href="index.html">
-						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
-					</a>
+                    <a href="index.html">
+                        <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
+                    </a>
                 </li>
                 <li>
-					<a href="anuncios.php">
-						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
-					</a>
-				</li>
-				<li>
-					<a href="addcommercial.php">
-						<i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
-						ANUNCIO
-					</a>
-				</li>
-				<li>
-					<a href="yourcommercial.php">
-						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
-					</a>
-				</li>
-				<li>
-					<a href="perfil.php">
-						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TU PERFIL
-					</a>
-				</li>
-				<li>
-					<a href="administration.php">
-						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
-					</a>
-				</li>
+                    <a href="anuncios.php">
+                        <i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="addcommercial.php">
+                        <i class="fa fa-pencil-square-o fa-fw hidden-md hidden-lg" aria-hidden="true"></i> PUBLICA TU
+                        ANUNCIO
+                    </a>
+                </li>
+                <li>
+                    <a href="yourcommercial.php">
+                        <i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TUS ANUNCIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.php">
+                        <i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> TU PERFIL
+                    </a>
+                </li>
+                <li>
+                    <a href="administration.php">
+                        <i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
+                    </a>
+                </li>
                 <li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="#!"><?php echo strtoupper($_SESSION['nombres']); ?></a></li>
                 <li class="hidden-xs hidden-sm">
                     <!--<i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i>-->
@@ -77,15 +75,15 @@ include("conexion.php");
         <i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
     </div>
 
-    
+
     <!-- ====== PopUpLogin ======-->
     <section class="full-width PopUpLogin PopUpLogin-2">
-		<div class="full-width">
-			<a href="perfil.php"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
-			<div role="separator" class="divider"></div>
-			<a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
-		</div>
-	</section>
+        <div class="full-width">
+            <a href="perfil.php"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
+            <div role="separator" class="divider"></div>
+            <a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
+        </div>
+    </section>
 
     <!-- ====== Contenido de pagina ======-->
 
@@ -148,7 +146,9 @@ include("conexion.php");
                             <td>
                                 <a type="button" name="<?php echo $row['codigo']; ?>" href="editUser.php?codigo=<?php echo $row['codigo']; ?>" class="btn btn-warning">Editar</a>
                                 <!--
-                                <a type="button" name="<?php //echo $row['codigo']; ?>" href="delete_user.php?codigo=<?php //echo $row['codigo']; ?>" class="btn btn-danger">Eliminar</a>
+                                <a type="button" name="<?php //echo $row['codigo']; 
+                                                        ?>" href="delete_user.php?codigo=<?php //echo $row['codigo']; 
+                                                                                                                        ?>" class="btn btn-danger">Eliminar</a>
                             -->
                             </td>
                         </tr>
