@@ -35,7 +35,7 @@ if ($filas > 0) {
 } else {
     echo "<script>
         alert('Correo o clave incorrecta');
-        window.location = 'login.html';
+        window.location = 'login.php';
         </script>
     ";
 }

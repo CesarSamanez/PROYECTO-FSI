@@ -12,7 +12,7 @@ if (empty($_SESSION)) {
     if ($_SESSION["estado"] == 0) {
         echo "<script>";
         echo "alert('Su cuenta ha sido deshabilitada, contactese con el administrador.');";
-        echo "window.location = 'login.html';";
+        echo "window.location = 'login.php';";
         echo "</script>";
     }
 }
