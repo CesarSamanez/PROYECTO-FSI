@@ -281,7 +281,7 @@ include("conexion.php");
 							<br>
 							<p class="text-center">
 								<button type="submit" class="btn btn-info">Continuar</button>
-								<button class="btn btn-danger"><a>Cancelar</a></button>
+								<button class="btn btn-danger"><a href="index.html">Cancelar</a></button>
 							</p>
 							<br>
 
