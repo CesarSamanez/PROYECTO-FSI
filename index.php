@@ -167,11 +167,11 @@ include("conexion.php");
 						while ($row = $result->fetch_assoc()) {
 					?>
 							<div class="item">
-
-								<?php
-								echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt=""/>';
-								?>
 								<center>
+									<?php
+									echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt=""/>';
+									?>
+
 									<h3><a href="post.php?codigo=<?php echo $row['CODIGO_INMUEBLE']; ?>" class="full-width post-info-title">Ver anuncio</a></3>
 								</center>
 							</div>
