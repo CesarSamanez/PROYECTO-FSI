@@ -156,9 +156,9 @@ include("conexion.php");
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<center>
-							<img src="assets/img/post.jpg" alt="">
+							<img src="assets/img/anuncios-publicitarios.png" alt="">
 
-							<h3><a href="google.com"> Ver anuncio</h3>
+							<h3><a href="anuncios.php"> Ver todos los anuncios...</h3>
 						</center>
 					</div>
 					<?php
