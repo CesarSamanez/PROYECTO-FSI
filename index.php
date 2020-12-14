@@ -167,7 +167,7 @@ include("conexion.php");
 					if ($result->num_rows > 0) {
 						while ($row = $result->fetch_assoc()) {
 					?>
-							<div class="item active">
+							<div class="item">
 
 								<?php
 								echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt=""/>';
