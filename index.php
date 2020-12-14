@@ -154,8 +154,7 @@ include("conexion.php");
 
 			<div id="slider-commercial" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
-					<div class="item">
-						</h1>
+					<div class="item active">
 						<img src="assets/img/post.jpg" alt="">
 						<center>
 							<h3><a href="google.com"> Ver anuncio</3>
