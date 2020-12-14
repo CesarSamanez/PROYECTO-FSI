@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<?php
+include("conexion.php");
+?>
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Página Principal</title>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">
@@ -59,8 +62,7 @@
 					</a>
 				</li>
 				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="login.php">INICIAR SESIÓN</a></li>
-				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin"
-						aria-hidden="true"></i></li>
+				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i></li>
 			</ul>
 		</nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
@@ -68,8 +70,7 @@
 	<!-- ====== PopUpLogin ======-->
 	<section class=" full-width PopUpLogin">
 		<ul class="nav nav-tabs nav-justified" role="tablist">
-			<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab"
-					data-toggle="tab">PARTICULAR</a></li>
+			<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab" data-toggle="tab">PARTICULAR</a></li>
 		</ul>
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane fade in active" id="LoginTab1">
@@ -78,8 +79,7 @@
 						<input type="email" name="email" class="form-control input-lg" placeholder="Email" required="">
 					</div>
 					<div class="form-group">
-						<input type="password" name="password" class="form-control input-lg" placeholder="Contraseña"
-							required="">
+						<input type="password" name="password" class="form-control input-lg" placeholder="Contraseña" required="">
 					</div>
 					<button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
 				</form>
@@ -138,15 +138,41 @@
 			</div>
 			<hr>
 			<h2 class="text-center text-light">Últimos anuncios</h2><br>
+			<?php
+
+			$sql = "select inmueble.codigo CODIGO_INMUEBLE, tipo_inmueble.nombre NOMBRE_TIPO_INMUEBLE, tipo_inmueble.descripcion, ubicacion.direccion, ubicacion.distrito, ubicacion.provincia, ubicacion.departamento DEPARTAMENTO_UBICACION, inmueble_detalles.ancho, inmueble_detalles.largo, inmueble_detalles.area, inmueble_detalles.precio PRECIO_INMUEBLE_DETALLES, inmueble_detalles.moneda, inmueble_detalles.otros_detalles, inmueble_detalles.aforo, inmueble_detalles.foto FOTO_INMUEBLE_DETALLES, usuario.nombres, usuario.apellidos, usuario.celular, usuario.correo, DATE_FORMAT(inmueble.fecha_creacion, '%d %M %Y') FECHA_CREACION_INMUEBLE from inmueble
+					INNER JOIN tipo_inmueble
+					ON inmueble.tipo_inmueble = tipo_inmueble.codigo
+					INNER JOin ubicacion
+					ON inmueble.ubicacion = ubicacion.codigo
+					INNER JOIN inmueble_detalles
+					ON inmueble.inmueble_detalles = inmueble_detalles.codigo
+					INNER JOIN usuario
+					ON inmueble.contacto = usuario.codigo;";
+
+			?>
+
 			<div id="slider-commercial" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						</h1>
-						<img src="assets/img/post.jpg" alt="">
-						<center>
-							<h3><a href="google.com"> Ver anuncio</3>
-						</center>
-					</div>
+					<?php
+					$result = $conexion->query($sql);
+
+					if ($result->num_rows > 0) {
+						while ($row = $result->fetch_assoc()) {
+					?>
+							<div class="item active">
+								</h1>
+								<?php
+								echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" class="img-responsive" />';
+								?>
+								<center>
+									<h3><a href="post.php?codigo=<?php echo $row['CODIGO_INMUEBLE']; ?>" class="full-width post-info-title"><?php echo $row['NOMBRE_TIPO_INMUEBLE']; ?></a></3>
+								</center>
+							</div>
+					<?php
+						}
+					}
+					?>
 					<div class="item">
 						</h1>
 						<img src="assets/img/post.jpg" alt="">
@@ -223,7 +249,9 @@
 		</div>
 	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script>
+		window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')
+	</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="js/main.js"></script>
