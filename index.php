@@ -158,7 +158,7 @@ include("conexion.php");
 						<center>
 							<img src="assets/img/post.jpg" alt="">
 
-							<h3><a href="google.com"> Ver anuncio</3>
+							<h3><a href="google.com"> Ver anuncio</h3>
 						</center>
 					</div>
 					<?php
