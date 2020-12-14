@@ -169,7 +169,7 @@ include("conexion.php");
 					?>
 							<div class="item">
 								<center>
-									<figure class="full-width full-height post-img">
+									<figure class="full-width full-heigth post-img">
 										<!-- Tamaño de la imagen 248x186 pixeles-->
 										<?php
 										echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" class="img-responsive" />';
