@@ -172,10 +172,7 @@ include("conexion.php");
 									<?php
 									echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt=""/>';
 									?>
-									<p>$ <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?></p>
-									<span><?php echo $row['DEPARTAMENTO_UBICACION']; ?></span>
-
-									<h3><a href="post.php?codigo=<?php echo $row['CODIGO_INMUEBLE']; ?>" class="full-width post-info-title">Ver anuncio</a></3>
+									<h3><a href="post.php?codigo=<?php echo $row['CODIGO_INMUEBLE']; ?>" class="full-width post-info-title">Ver anuncio</a></h3>
 								</center>
 							</div>
 					<?php
