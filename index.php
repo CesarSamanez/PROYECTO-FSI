@@ -161,7 +161,7 @@ include("conexion.php");
 						while ($row = $result->fetch_assoc()) {
 					?>
 							<div class="item">
-
+								</h1>
 								<?php
 								echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt=""/>';
 								?>
@@ -173,7 +173,7 @@ include("conexion.php");
 						}
 					}
 					?>
-
+					
 				</div>
 				<a class="left carousel-control" href="#slider-commercial" role="button" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
