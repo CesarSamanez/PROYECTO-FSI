@@ -155,8 +155,9 @@ include("conexion.php");
 			<div id="slider-commercial" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img src="assets/img/post.jpg" alt="">
 						<center>
+							<img src="assets/img/post.jpg" alt="">
+
 							<h3><a href="google.com"> Ver anuncio</3>
 						</center>
 					</div>
@@ -171,6 +172,8 @@ include("conexion.php");
 									<?php
 									echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt=""/>';
 									?>
+									<p class="full-width post-info-price">$ <?php echo $row['PRECIO_INMUEBLE_DETALLES']; ?></p>
+									<span class="post-info-zone"><?php echo $row['DEPARTAMENTO_UBICACION']; ?></span>
 
 									<h3><a href="post.php?codigo=<?php echo $row['CODIGO_INMUEBLE']; ?>" class="full-width post-info-title">Ver anuncio</a></3>
 								</center>
