@@ -169,9 +169,12 @@ include("conexion.php");
 					?>
 							<div class="item">
 								<center>
-									<?php
-									echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt=""/>';
-									?>
+									<figure class="full-width post-img">
+										<!-- Tamaño de la imagen 248x186 pixeles-->
+										<?php
+										echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" class="img-responsive" />';
+										?>
+									</figure>
 									<h3><a href="post.php?codigo=<?php echo $row['CODIGO_INMUEBLE']; ?>">Ver anuncio</a></h3>
 								</center>
 							</div>
