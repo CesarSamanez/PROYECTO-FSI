@@ -166,21 +166,14 @@ include("conexion.php");
 								echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt="" class="img-responsive" />';
 								?>
 								<center>
-									<h3><a href="post.php?codigo=<?php echo $row['CODIGO_INMUEBLE']; ?>" class="full-width post-info-title"><?php echo $row['NOMBRE_TIPO_INMUEBLE']; ?></a></3>
+									<h3><a href="post.php?codigo=<?php echo $row['CODIGO_INMUEBLE']; ?>" class="full-width post-info-title">Ver anuncio</a></3>
 								</center>
 							</div>
 					<?php
 						}
 					}
 					?>
-					<div class="item">
-						</h1>
-						<img src="assets/img/post.jpg" alt="">
-						<center>
-							<h3><a href="google.com"> Ver anuncio</3>
-						</center>
-					</div>
-
+					
 				</div>
 				<a class="left carousel-control" href="#slider-commercial" role="button" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
