@@ -154,6 +154,13 @@ include("conexion.php");
 
 			<div id="slider-commercial" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
+					<div class="item">
+						</h1>
+						<img src="assets/img/post.jpg" alt="">
+						<center>
+							<h3><a href="google.com"> Ver anuncio</3>
+						</center>
+					</div>
 					<?php
 					$result = $conexion->query($sql);
 
@@ -161,7 +168,7 @@ include("conexion.php");
 						while ($row = $result->fetch_assoc()) {
 					?>
 							<div class="item active">
-								
+
 								<?php
 								echo '<img src="data:image/png;base64,' . base64_encode($row['FOTO_INMUEBLE_DETALLES']) . '" alt=""/>';
 								?>
@@ -173,7 +180,7 @@ include("conexion.php");
 						}
 					}
 					?>
-					
+
 				</div>
 				<a class="left carousel-control" href="#slider-commercial" role="button" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
