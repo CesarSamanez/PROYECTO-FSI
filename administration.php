@@ -100,7 +100,6 @@ include("conexion.php");
                     <th scope="col">Dni</th>
                     <th scope="col">Celular</th>
                     <th scope="col">Correo</th>
-                    <th scope="col">Clave</th>
                     <th scope="col">Función</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Creación</th>
@@ -127,7 +126,6 @@ include("conexion.php");
                             <td><?php echo $row['dni']; ?></td>
                             <td><?php echo $row['celular']; ?></td>
                             <td><?php echo $row['correo']; ?></td>
-                            <td><?php echo $row['clave']; ?></td>
                             <td><?php
                                 if ($row['rol'] == 0) {
                                     echo "Usuario";
