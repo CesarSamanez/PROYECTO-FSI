@@ -113,63 +113,21 @@ include("conexion.php");
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Departamento</label>
 							<div class="col-sm-7">
-								<select name="departamento" class="form-control input-md" required>
-									<option value="" disable selected>Selecciona el departamento</option>
-									<?php
-									$sql = "SELECT DISTINCT departamento FROM lugares ORDER BY departamento ASC";
-									$result = $conexion->query($sql);
-
-									if ($result->num_rows > 0) {
-										while ($row = $result->fetch_assoc()) {
-									?>
-											<option value="<?php echo $row['departamento']; ?>"><?php echo $row['departamento']; ?></option>
-									<?php
-										}
-									}
-									?>
-								</select>
+								<input type="text" name="departamento" maxlength="50" class="form-control" placeholder="Departamento" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Provincia</label>
 							<div class="col-sm-7">
-								<select name="provincia" class="form-control input-md" required>
-									<option value="" disable selected>Selecciona la provincia</option>
-									<?php
-									$sql = "SELECT DISTINCT provincia FROM lugares ORDER BY provincia ASC";
-									$result = $conexion->query($sql);
-
-									if ($result->num_rows > 0) {
-										while ($row = $result->fetch_assoc()) {
-									?>
-											<option value="<?php echo $row['provincia']; ?>"><?php echo $row['provincia']; ?></option>
-									<?php
-										}
-									}
-									?>
-								</select>
+								<input type="text" name="provincia" maxlength="50" class="form-control" placeholder="Provincia" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Distrito</label>
 							<div class="col-sm-7">
-								<select name="distrito" class="form-control input-md" required>
-									<option value="" disable selected>Selecciona el distrito</option>
-									<?php
-									$sql = "SELECT DISTINCT distrito FROM lugares ORDER BY distrito ASC";
-									$result = $conexion->query($sql);
-
-									if ($result->num_rows > 0) {
-										while ($row = $result->fetch_assoc()) {
-									?>
-											<option value="<?php echo $row['distrito']; ?>"><?php echo $row['distrito']; ?></option>
-									<?php
-										}
-									}
-									?>
-								</select>
+								<input type="text" name="distrito" maxlength="50" class="form-control" placeholder="Distrito" required>
 							</div>
 						</div>
 
