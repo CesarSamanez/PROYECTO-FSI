@@ -33,7 +33,7 @@ include("conexion.php");
 						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
 					</a>
 				</li>
-				
+
 				<li>
 					<a href="anuncios.php">
 						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
@@ -61,8 +61,7 @@ include("conexion.php");
 					</a>
 				</li>
 				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="login.php">INICIAR SESIÓN</a></li>
-				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin"
-						aria-hidden="true"></i></li>
+				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i></li>
 			</ul>
 		</nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
@@ -105,6 +104,18 @@ include("conexion.php");
 						<div>ANUNCIOS</div>
 					</div>
 					<!-- Contenido-->
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Filtro</label>
+						<div class="col-sm-7">
+							<select name="tipo_inmueble" class="form-control input-md" required>
+								<option value="" disable selected>Selecciona el tipo de inmueble</option>
+								<option value="Terreno">Terreno</option>
+								<option value="Hogar">Hogar</option>
+								<option value="Departamento">Departamento</option>
+							</select>
+						</div>
+					</div>
 
 					<div class="full-width container-post">
 						<?php
