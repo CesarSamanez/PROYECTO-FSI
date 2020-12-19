@@ -106,15 +106,13 @@ include("conexion.php");
 					<!-- Contenido-->
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label">Filtro</label>
-						<div class="col-sm-7">
+						<label class="col-sm-3 control-label">Filtro: </label>
 							<select name="tipo_inmueble" class="form-control input-md" required>
 								<option value="" disable selected>Selecciona el tipo de inmueble</option>
 								<option value="Terreno">Terreno</option>
 								<option value="Hogar">Hogar</option>
 								<option value="Departamento">Departamento</option>
 							</select>
-						</div>
 						<button type="submit" class="btn btn-info">Continuar</button>
 					</div>
 
