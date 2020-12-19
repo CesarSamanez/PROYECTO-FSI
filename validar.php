@@ -29,7 +29,7 @@ if ($filas > 0) {
         if ($_SESSION["rol"] == 1) {
             header('Location: administration.php');
         } else {
-            header('Location: index.html');
+            header('Location: index.php');
         }
     }
 } else {

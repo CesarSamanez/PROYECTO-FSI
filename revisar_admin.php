@@ -11,7 +11,7 @@ if(empty($_SESSION)){
   if($_SESSION["rol"]!=1){
     echo "<script>";
     echo "alert('No tiene los permisos necesarios para el acceso');";
-    echo "window.location = 'index.html';";
+    echo "window.location = 'index.php';";
     echo "</script>";
   }
 }

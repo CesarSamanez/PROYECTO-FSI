@@ -6,6 +6,6 @@ session_start();
 if (!empty($_SESSION)) {
     echo "<script>";
     echo "alert('Advertencia: Existe una sesión iniciada.');";
-    echo "window.location = 'index.html';";
+    echo "window.location = 'index.php';";
     echo "</script>";
 }

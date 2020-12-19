@@ -32,7 +32,7 @@ include("conexion.php");
 				<a href="newaccount.html" class="btn btn-primary header-menu-mobile-btn">CRÉATE UNA CUENTA</a>
 			</div>
 			<li>
-				<a href="index.html">
+				<a href="index.php">
 					<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
 				</a>
 			</li>
