@@ -106,7 +106,7 @@ include("conexion.php");
 					<!-- Contenido-->
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label">Filtro: </label>
+						<label class="col-sm-3 control-label">Filtrar por categoría: </label>
 						<div class="col-sm-7">
 							<select name="tipo_inmueble" class="form-control input-md" required>
 								<option value="" disable selected>Selecciona el tipo de inmueble</option>
