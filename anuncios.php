@@ -115,6 +115,7 @@ include("conexion.php");
 								<option value="Departamento">Departamento</option>
 							</select>
 						</div>
+						<button type="submit" class="btn btn-info">Continuar</button>
 					</div>
 
 					<div class="full-width container-post">
