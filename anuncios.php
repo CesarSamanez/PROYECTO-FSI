@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 include("conexion.php");
+session_start();
 ?>
 <html lang="es">
 
@@ -16,7 +17,7 @@ include("conexion.php");
 	<!-- ====== Barra de navegacion ======-->
 	<div class="full-width NavBar">
 		<div class="full-width text-semi-bold NavBar-logo">
-			PROYECTO-FSI
+			BHOUSE
 		</div>
 		<nav class=" full-width NavBar-Nav">
 			<div class="full-width NavBar-Nav-bg hidden-md hidden-lg show-menu-mobile"></div>
@@ -24,16 +25,25 @@ include("conexion.php");
 				<div class="full-width hidden-md hidden-lg header-menu-mobile">
 					<i class="fa fa-times header-menu-mobile-close-btn show-menu-mobile" aria-hidden="true"></i>
 					<i class="fa fa-user NavBar-Nav-icon header-menu-mobile-icon" aria-hidden="true"></i>
-					<a href="login.php" class="btn btn-info header-menu-mobile-btn">INICIAR SESIÓN</a>
-					<div class="divider"></div>
-					<a href="newaccount.html" class="btn btn-primary header-menu-mobile-btn">CRÉATE UNA CUENTA</a>
+					<?php
+					if (empty($_SESSION)) {
+					?>
+						<a href="login.php" class="btn btn-info header-menu-mobile-btn">INICIAR SESIÓN</a>
+						<div class="divider"></div>
+						<a href="newaccount.php" class="btn btn-primary header-menu-mobile-btn">CRÉATE UNA CUENTA</a>
+					<?php
+					} else {
+					?>
+						<a href="cerrar_sesion.php" class="btn btn-warning header-menu-mobile-btn">CERRAR SESIÓN</a>
+					<?php
+					}
+					?>
 				</div>
 				<li>
 					<a href="index.php">
 						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> INICIO
 					</a>
 				</li>
-
 				<li>
 					<a href="anuncios.php">
 						<i class="fa fa-home fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ÚLTIMOS ANUNCIOS
@@ -60,20 +70,43 @@ include("conexion.php");
 						<i class="fa fa-object-group fa-fw hidden-md hidden-lg" aria-hidden="true"></i> ADMINISTRADORES
 					</a>
 				</li>
-				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin" href="login.php">INICIAR SESIÓN</a></li>
+				<li class="hidden-xs hidden-sm"><a class="btn-PopUpLogin"></a></li>
 				<li class="hidden-xs hidden-sm"><i class="fa fa-user NavBar-Nav-icon btn-PopUpLogin" aria-hidden="true"></i></li>
 			</ul>
 		</nav>
 		<i class="fa fa-bars hidden-md hidden-lg btn-mobile-menu show-menu-mobile" aria-hidden="true"></i>
 	</div>
 	<!-- ====== PopUpLogin ======-->
-	<section class="full-width PopUpLogin PopUpLogin-2">
-		<div class="full-width">
-			<a href="perfil.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Tu perfil</a>
-			<a href="config.html"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Configuración</a>
-			<div role="separator" class="divider"></div>
-			<a href="#!"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Cerrar sesión</a>
-		</div>
+	<section class=" full-width PopUpLogin">
+		<?php
+		if (empty($_SESSION)) {
+		?>
+			<ul class="nav nav-tabs nav-justified" role="tablist">
+				<li role="presentation" class="active"><a href="#LoginTab1" aria-controls="LoginTab1" role="tab" data-toggle="tab">PARTICULAR</a></li>
+			</ul>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane fade in active" id="LoginTab1">
+					<form action="validar.php" method="POST" style="padding-top: 15px;">
+						<div class="form-group">
+							<input type="email" name="email" class="form-control input-lg" placeholder="Email" required="">
+						</div>
+						<div class="form-group">
+							<input type="password" name="password" class="form-control input-lg" placeholder="Contraseña" required="">
+						</div>
+						<button class="btn btn-danger btn-lg" type="submit">INICIAR SESIÓN</button>
+					</form>
+					<div class="full-width divider"></div>
+					<h4 class="text-center">¿Aún no tienes cuenta?</h4>
+					<a class="text-light" href="newaccount.php">CRÉATE UNA GRATIS</a>
+				</div>
+			<?php
+		} else {
+			?>
+				<a href="cerrar_sesion.php" class="btn btn-warning header-menu-mobile-btn">CERRAR SESIÓN</a>
+			<?php
+		}
+			?>
+			</div>
 	</section>
 	<!-- ====== Contenido de pagina ======-->
 	<section class="full-width section">

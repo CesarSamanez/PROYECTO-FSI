@@ -82,10 +82,10 @@ $query = mysqli_query($conexion, $sql);
 
 if ($query) {
     echo "<script> alert('Registro exitoso.');  
-    window.location = 'addcommercial.php';  
+    window.location = 'anuncios.php';  
     </script>";
 } else {
     echo "<script> alert('No se pudo realizar el registro Inmueble');   
-    window.location = 'yourcommercial.php';  
+    window.location = 'index.php';  
     </script>";
 }
