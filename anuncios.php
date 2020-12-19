@@ -105,21 +105,6 @@ include("conexion.php");
 					</div>
 					<!-- Contenido-->
 
-					<div class="form-group">
-						<center>
-							<label class="col-sm-3 control-label">Filtrar por categoría: </label>
-							<div class="col-sm-7">
-								<select name="tipo_inmueble" class="form-control input-md" required>
-									<option value="" disable selected>Selecciona el tipo de inmueble</option>
-									<option value="Terreno">Terreno</option>
-									<option value="Hogar">Hogar</option>
-									<option value="Departamento">Departamento</option>
-								</select>
-							</div>
-							<button type="submit" class="btn btn-info">Buscar</button>
-						</center>
-					</div>
-
 					<div class="full-width container-post">
 						<?php
 
